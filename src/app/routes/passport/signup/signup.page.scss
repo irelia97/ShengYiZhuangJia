@@ -1,0 +1,73 @@
+    .logo {
+        width: 33%;
+      }
+      .line {
+        height: 1.5px;
+        background-color: #e9c7c7;
+      }
+      .full-width {
+        width: 100%;
+      }
+      .one_text {
+        color: rgb(145, 139, 139);
+        font-size: 28px;
+      }
+      .signup_text {
+        // display: block;
+        // text-indent: 10px;
+        font-size: 15px;
+        color: #723e3e;
+        border: solid 1px #967575;
+        border-radius: 5px;
+        width: 80%;
+        margin-top: 10px;
+        // margin-top: 15px;
+      }
+      .signup_button {
+        width: 80%;
+        height: 45px;
+        font-size: 15px;
+        --ion-color-base: #778f3f !important;
+        --border-radius: 5px !important;
+        margin: 0 auto;
+        margin-top: 10px;
+      }
+      .signup_form {
+        width: 80%;
+        margin: 0 auto;
+      }
+      .warn {
+        font-size: 10px;
+        display: block;
+        margin: 0 0;
+      }
+      .signup_warn {
+        width: 80%;
+        margin: 0 auto;
+      }
+      .code_text {
+        font-size: 16px;
+        border: solid 1px #becaab;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+      .code_button {
+        font-size: 16px;
+        height: 100%;
+        --ion-color-base: #dd375b !important;
+        --border-radius: 5px;
+      }
+      .signup_image{
+          margin: 0 auto;
+      }
+      .signup_back_image{
+          float: left;
+          width: 30px;
+          height: 30px;
+      }
+      .signup_back{
+          text-align: left;
+          padding-left: 40px;
+          font-size: 15px;
+          color: #9ebb7d;
+      }

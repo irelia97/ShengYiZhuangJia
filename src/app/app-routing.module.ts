@@ -21,7 +21,11 @@ const routes: Routes = [
     path: 'welcome', loadChildren: './routes/welcome/welcome.module#WelcomePageModule', 
     //canActivate: [StartAppGuard] 
   },
-  { path: 'signup', loadChildren: './routes/passport/signup/signup.module#SignupPageModule' }
+  { path: 'signup', loadChildren: './routes/passport/signup/signup.module#SignupPageModule' },
+  { path: 'login', loadChildren: './routes/login/login.module#LoginPageModule' },
+  { path: 'forgot-password', loadChildren: './routes/forgot-password/forgot-password.module#ForgotPasswordPageModule' },
+  { path: 'setting', loadChildren: './routes/setting/setting.module#SettingPageModule' },
+  { path: 'shopsetting', loadChildren: './routes/shopsetting/shopsetting.module#ShopsettingPageModule' }
 ];
 
 @NgModule({

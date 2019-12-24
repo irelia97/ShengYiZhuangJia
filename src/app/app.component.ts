@@ -23,6 +23,8 @@ export class AppComponent {
     }
   ];
 
+  
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -36,5 +38,13 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    this.appPages = [
+        { title: 'Forum', url: '/home', icon: 'chatboxes' },
+        { title: 'Tel Box', url: '/home', icon: 'create' },
+        { title: 'Invite', url: '/home', icon: 'git-merge' },
+        { title: 'Cash account', url: '/home', icon: 'cash' },
+        { title: 'FeedBack', url: '/home', icon: 'cash' },
+        { title: 'Help', url: '/home', icon: 'cash' },
+      ];
   }
 }

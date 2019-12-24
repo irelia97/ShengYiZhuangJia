@@ -20,6 +20,7 @@ export class AuthentiactionCodeService {
             let num =Math.floor(Math.random() * 10);
             this.code += num.toString();
         }
+        console.log('code = ' + this.code);
         return this.code;
     }
     //验证用户输入的短信验证码是否一致，是否过期

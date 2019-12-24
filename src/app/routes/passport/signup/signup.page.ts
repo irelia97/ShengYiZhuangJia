@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { IonSlides } from '@ionic/angular';
 import { AuthentiactionCodeService } from 'src/app/shared/services/authentiaction-code.service';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/services/user-service.service';
 
 @Component({
   selector: 'app-signup',
@@ -23,7 +25,8 @@ export class SignupPage implements OnInit {
   slideIndex = 0;
   // 依赖注入
   @ViewChild('signupSlides', {static: false}) signupSlides: IonSlides;
-  constructor(private authenticationCodeService: AuthentiactionCodeService) { }
+  constructor(private authenticationCodeService: AuthentiactionCodeService, private userService: UserService, 
+    private router: Router) { }
   // tslint:disable-next-line:member-ordering
   randomCode = null;
   verifyCode: any = {
@@ -88,5 +91,16 @@ export class SignupPage implements OnInit {
     }
   }
   onSignupInformation(form: NgForm) {
+    if (this.signup.password === this.signup.confirmPassword) {
+        // 注册成功，保存数据
+        this.userService.signup_lyy(this.signup);
+        this.onNext();
+    } else {
+        //this.pwdIsSame = false;
+    }
+   }
+
+   gotoLogin(){
+        this.router.navigateByUrl('\login');
    }
 }

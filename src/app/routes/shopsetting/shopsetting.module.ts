@@ -5,24 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { WelcomePage } from './welcome.page';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { ShopsettingPage } from './shopsetting.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: WelcomePage
+    component: ShopsettingPage
   }
 ];
 
 @NgModule({
   imports: [
-    SharedModule,
     CommonModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [WelcomePage]
+  declarations: [ShopsettingPage]
 })
-export class WelcomePageModule {}
+export class ShopsettingPageModule {}

@@ -1,13 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["home-home-module"],{
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/home/home.page.html":
-/*!***************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/home/home.page.html ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html":
+/*!***************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>\n      Home\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <ion-card class=\"welcome-card\">\n      <img src=\"/assets/shapes.svg\" alt=\"\" />\n      <ion-card-header>\n        <ion-card-subtitle>Get Started</ion-card-subtitle>\n        <ion-card-title>Welcome to Ionic</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>\n      </ion-card-content>\n    </ion-card>\n    <ion-list lines=\"none\">\n      <ion-list-header>\n        <ion-label>Resources</ion-label>\n      </ion-list-header>\n      <ion-item href=\"https://ionicframework.com/docs/\">\n        <ion-icon slot=\"start\" color=\"medium\" name=\"book\"></ion-icon>\n        <ion-label>Ionic Documentation</ion-label>\n      </ion-item>\n      <ion-item href=\"https://ionicframework.com/docs/building/scaffolding\">\n        <ion-icon slot=\"start\" color=\"medium\" name=\"build\"></ion-icon>\n        <ion-label>Scaffold Out Your App</ion-label>\n      </ion-item>\n      <ion-item href=\"https://ionicframework.com/docs/layout/structure\">\n        <ion-icon slot=\"start\" color=\"medium\" name=\"grid\"></ion-icon>\n        <ion-label>Change Your App Layout</ion-label>\n      </ion-item>\n      <ion-item href=\"https://ionicframework.com/docs/theming/basics\">\n        <ion-icon slot=\"start\" color=\"medium\" name=\"color-fill\"></ion-icon>\n        <ion-label>Theme Your App</ion-label>\n      </ion-item>\n    </ion-list>\n</ion-content>\n"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button color=\"light\"></ion-menu-button>\n      </ion-buttons>\n      <ion-title>\n        HomePage\n      </ion-title>\n      <ion-buttons slot=\"end\">\n        <ion-button color=\"light\">\n          <ion-icon slot=\"icon-only\" name=\"calendar\"></ion-icon>\n        </ion-button>\n        <ion-button color=\"light\">\n          <ion-icon slot=\"icon-only\" name=\"notifications\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n    <img src=\"assets/img/Irelia.jpg\" alt=\"\">\n    <ion-grid>\n        <ion-row>\n            <ion-col *ngFor=\"let s of sales\">\n              <h6>{{s.title}}</h6>\n              <h4><span>{{233.95 | number:'1.2-2'}}RMB</span></h4>\n              <p>\n                {{s.content}}\n                <span [ngClass]=\"{'less-equal':s.current - s.previous <= 0,'greater':s.current - s.previous > 0}\">\n                  {{s.current - s.previous}}\n                </span>&nbsp;\n                <ng-container [ngSwitch]=\"minus(s.current, s.previous)\">\n                  <ion-icon name=\"arrow-round-up\" color=\"danger\" *ngSwitchCase=\"1\"></ion-icon>\n                  <ion-icon name=\"arrow-round-forward\" color=\"success\" *ngSwitchCase=\"0\"></ion-icon>\n                  <ion-icon name=\"arrow-round-down\" color=\"success\" *ngSwitchCase=\"-1\"></ion-icon>\n                </ng-container>\n              </p>\n            </ion-col>\n        </ion-row>\n\n        <ion-row class=\"quick-actions\"  *ngFor=\"let q of quicks\">\n            <ion-col class=\"quick-action-item\" *ngFor=\"let qq of q\">\n              <a class=\"shortcut\" href={{qq.href}} *ngIf=\"!qq.disable\">\n                <img src=\"assets/img/{{qq.name}}.png\" alt=\"\">\n                <!--<ion-icon name={{qq.name}}></ion-icon>-->\n                <div>{{qq.text}}</div>\n              </a>\n            </ion-col>\n        </ion-row>    \n          \n        <ion-row class=\"quick-actions\">\n            <ion-col class=\"quick-action-item\">\n                <a class=\"shortcut\" href=\"/add-category\">\n                    <img src=\"/assets/img/image_addsales.png\" alt=\"\">\n                    <div>AddSales</div>\n                </a>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n    <app-copyright [bottom]=\"'30px'\"></app-copyright>\n  </ion-content>\n  ");
 
 /***/ }),
 
@@ -28,6 +30,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _home_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home.page */ "./src/app/home/home.page.ts");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
+
 
 
 
@@ -40,6 +44,7 @@ let HomePageModule = class HomePageModule {
 HomePageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
@@ -62,10 +67,12 @@ HomePageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*************************************!*\
   !*** ./src/app/home/home.page.scss ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".welcome-card img {\n  max-height: 35vh;\n  overflow: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9DOlxcVXNlcnNcXElyZWxpYTk3XFxEZXNrdG9wXFxWc0NvZGVQcm9qXFxXZWJQcm9qZWN0XFxteVByb2plY3Qvc3JjXFxhcHBcXGhvbWVcXGhvbWUucGFnZS5zY3NzIiwic3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi53ZWxjb21lLWNhcmQgaW1nIHtcbiAgbWF4LWhlaWdodDogMzV2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cbiIsIi53ZWxjb21lLWNhcmQgaW1nIHtcbiAgbWF4LWhlaWdodDogMzV2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn0iXX0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".welcome-card img {\n  max-height: 35vh;\n  overflow: hidden;\n}\n\n.less-equal {\n  color: var(--ion-color-success, #10dc60);\n}\n\n.greater {\n  color: var(--ion-color-danger, #f04141);\n}\n\n.quick-actions + .quick-actions {\n  margin-top: -1px;\n}\n\n.quick-action-item {\n  height: 25vw;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  border: 1px solid #ececec;\n}\n\n.quick-action-item + .quick-action-item {\n  margin-left: -1px;\n}\n\n.shortcut {\n  text-align: center;\n}\n\n.shortcut ion-icon {\n  font-size: 48px;\n}\n\n.shortcut div {\n  color: var(--ion-color-dark);\n}\n\na {\n  text-decoration: none;\n}\n\n.quick-action-item:nth-child(4n+1) {\n  margin-left: 0px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9DOlxcVXNlcnNcXElyZWxpYTk3XFxEZXNrdG9wXFxqc19wcm9qXFxteVByb2plY3RcXFNoZW5nWWlaaHVhbmdKaWEvc3JjXFxhcHBcXGhvbWVcXGhvbWUucGFnZS5zY3NzIiwic3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtBQ0NGOztBREVBO0VBQ0ksd0NBQUE7QUNDSjs7QURDQTtFQUNBLHVDQUFBO0FDRUE7O0FEQ0E7RUFDSSxnQkFBQTtBQ0VKOztBREFBO0VBQ0ksWUFBQTtFQUNBLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7RUFDQSx3QkFBQTtVQUFBLHVCQUFBO0VBQ0EseUJBQUE7QUNHSjs7QUREQTtFQUNJLGlCQUFBO0FDSUo7O0FERkE7RUFDSSxrQkFBQTtBQ0tKOztBREhBO0VBQ0ksZUFBQTtBQ01KOztBREpBO0VBQ0ksNEJBQUE7QUNPSjs7QURMQTtFQUNJLHFCQUFBO0FDUUo7O0FETkE7RUFDSSwyQkFBQTtBQ1NKIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi53ZWxjb21lLWNhcmQgaW1nIHtcbiAgbWF4LWhlaWdodDogMzV2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLmxlc3MtZXF1YWx7XG4gICAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1zdWNjZXNzLCAjMTBkYzYwKTtcbn1cbi5ncmVhdGVye1xuY29sb3I6IHZhcigtLWlvbi1jb2xvci1kYW5nZXIsICNmMDQxNDEpO1xufVxuXG4ucXVpY2stYWN0aW9ucyArIC5xdWljay1hY3Rpb25ze1xuICAgIG1hcmdpbi10b3A6IC0xcHg7XG59XG4ucXVpY2stYWN0aW9uLWl0ZW0ge1xuICAgIGhlaWdodDogMjV2dztcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI2VjZWNlYztcbn1cbi5xdWljay1hY3Rpb24taXRlbSArIC5xdWljay1hY3Rpb24taXRlbXtcbiAgICBtYXJnaW4tbGVmdDogLTFweDtcbn1cbi5zaG9ydGN1dHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uc2hvcnRjdXQgaW9uLWljb257XG4gICAgZm9udC1zaXplOiA0OHB4O1xufVxuLnNob3J0Y3V0IGRpdntcbiAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xufVxuYSB7XG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufVxuLnF1aWNrLWFjdGlvbi1pdGVtOm50aC1jaGlsZCg0bisxKSB7XG4gICAgbWFyZ2luLWxlZnQ6IDBweCAhaW1wb3J0YW50O1xufSIsIi53ZWxjb21lLWNhcmQgaW1nIHtcbiAgbWF4LWhlaWdodDogMzV2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLmxlc3MtZXF1YWwge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXN1Y2Nlc3MsICMxMGRjNjApO1xufVxuXG4uZ3JlYXRlciB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItZGFuZ2VyLCAjZjA0MTQxKTtcbn1cblxuLnF1aWNrLWFjdGlvbnMgKyAucXVpY2stYWN0aW9ucyB7XG4gIG1hcmdpbi10b3A6IC0xcHg7XG59XG5cbi5xdWljay1hY3Rpb24taXRlbSB7XG4gIGhlaWdodDogMjV2dztcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNlY2VjZWM7XG59XG5cbi5xdWljay1hY3Rpb24taXRlbSArIC5xdWljay1hY3Rpb24taXRlbSB7XG4gIG1hcmdpbi1sZWZ0OiAtMXB4O1xufVxuXG4uc2hvcnRjdXQge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5zaG9ydGN1dCBpb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogNDhweDtcbn1cblxuLnNob3J0Y3V0IGRpdiB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItZGFyayk7XG59XG5cbmEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbi5xdWljay1hY3Rpb24taXRlbTpudGgtY2hpbGQoNG4rMSkge1xuICBtYXJnaW4tbGVmdDogMHB4ICFpbXBvcnRhbnQ7XG59Il19 */");
 
 /***/ }),
 
@@ -81,18 +88,76 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePage", function() { return HomePage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _shared_services_local_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/services/local-storage.service */ "./src/app/shared/services/local-storage.service.ts");
+
+
 
 
 let HomePage = class HomePage {
-    constructor() { }
+    constructor(router, localStorageService) {
+        this.router = router;
+        this.localStorageService = localStorageService;
+        this.sales = [
+            { 'title': 'Today', 'content': 'With Yesterday', 'current': 10.00, 'previous': 20.00 },
+            { 'title': 'Week', 'content': 'With SameTime', 'current': 20.00, 'previous': 30.00 },
+            { 'title': 'Month', 'content': 'With SameTime', 'current': 30.00, 'previous': 40.00 }
+        ];
+        this.quicks = [
+            [
+                { 'href': '/addProduct', 'name': 'add_salse', 'text': 'Add Items', 'disable': false },
+                { 'href': '/home', 'name': 'add_user', 'text': 'Add members', 'disable': false },
+                { 'href': '/home', 'name': 'sales_account', 'text': 'Cash register', 'disable': false },
+                { 'href': '/home', 'name': 'a_note', 'text': 'Expenditure management', 'disable': false }
+            ],
+            [
+                { 'href': '/productList', 'name': 'sales_management', 'text': 'Merchandise management', 'disable': false },
+                { 'href': '/home', 'name': 'user_management', 'text': 'Member Management', 'disable': false },
+                { 'href': '/home', 'name': 'shop_management', 'text': 'Query sales', 'disable': false },
+                { 'href': '/home', 'name': 'analysis', 'text': 'Insight', 'disable': false }
+            ],
+            [
+                { 'href': '/supplierList', 'name': 'gongying_more', 'text': 'Supplier management', 'disable': false },
+                { 'href': '/home', 'name': 'guandan_more', 'text': 'Pending order', 'disable': false },
+                { 'href': '/home', 'name': 'image_addsales', 'text': 'Advanced Features', 'disable': false },
+                { 'disable': true }
+            ]
+        ];
+    }
+    ionViewWillEnter() {
+        let login = this.localStorageService.get('currentUser', null);
+        if (login == null) {
+            this.router.navigateByUrl('currentUser');
+        }
+    }
+    minus(current, previous) {
+        const result = current - previous;
+        if (result > 0) {
+            return 1;
+        }
+        else if (result === 0) {
+            return 0;
+        }
+        else {
+            return -1;
+        }
+    }
+    AddSales() {
+        console.log('turn to /category-list');
+        this.router.navigateByUrl('/category-list');
+    }
 };
+HomePage.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _shared_services_local_storage_service__WEBPACK_IMPORTED_MODULE_3__["LocalStorageService"] }
+];
 HomePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-home',
-        template: __webpack_require__(/*! raw-loader!./home.page.html */ "./node_modules/raw-loader/index.js!./src/app/home/home.page.html"),
-        styles: [__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")]
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _shared_services_local_storage_service__WEBPACK_IMPORTED_MODULE_3__["LocalStorageService"]])
 ], HomePage);
 
 

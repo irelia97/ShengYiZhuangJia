@@ -35,10 +35,10 @@ export class HomePage {
     ];
     constructor(private router: Router, private localStorageService: LocalStorageService) { }
     ionViewWillEnter() {
-        // let login = this.localStorageService.get('login', null);
-        // if (login == null) {
-        //     this.router.navigateByUrl('login');
-        // }
+        let login = this.localStorageService.get('currentUser', null);
+        if (login == null) {
+            this.router.navigateByUrl('currentUser');
+        }
     }
   
   minus(current: number, previous: number): number {
@@ -50,5 +50,10 @@ export class HomePage {
     } else {
       return -1;
     }
+  }
+
+  AddSales(){
+      console.log('turn to /category-list');
+      this.router.navigateByUrl('/category-list');
   }
 }

@@ -34,8 +34,8 @@ export class WelcomePage implements OnInit {
       hasRun: false,
       version: '1.0.1'
     });
-    if ( appConfig.hasRun === false ) {
-      appConfig.hasRun = false;
+    if ( appConfig.hasRun == false ) {
+      appConfig.hasRun = true;
       this.localStorageService.set('App', appConfig);
     } else {
       this.router.navigateByUrl('\home');

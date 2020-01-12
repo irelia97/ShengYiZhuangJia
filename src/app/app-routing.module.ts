@@ -25,7 +25,12 @@ const routes: Routes = [
   { path: 'login', loadChildren: './routes/login/login.module#LoginPageModule' },
   { path: 'forgot-password', loadChildren: './routes/forgot-password/forgot-password.module#ForgotPasswordPageModule' },
   { path: 'setting', loadChildren: './routes/setting/setting.module#SettingPageModule' },
-  { path: 'shopsetting', loadChildren: './routes/shopsetting/shopsetting.module#ShopsettingPageModule' }
+  { path: 'shopsetting', loadChildren: './routes/shopsetting/shopsetting.module#ShopsettingPageModule' },
+  { path: 'about-us', loadChildren: './routes/about-us/about-us.module#AboutUsPageModule' },
+  { path: 'change-password', loadChildren: './routes/change-password/change-password.module#ChangePasswordPageModule' },
+  { path: 'editShop', loadChildren: './routes/edit-shop/edit-shop.module#EditShopPageModule' },
+  { path: 'category-list', loadChildren: './routes/category-list/category-list.module#CategoryListPageModule' },
+  { path: 'add-category', loadChildren: './routes/add-category/add-category.module#AddCategoryPageModule' },
 ];
 
 @NgModule({

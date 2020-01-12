@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { LocalStorageService } from './shared/services/local-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -23,9 +24,8 @@ export class AppComponent {
     }
   ];
 
-  
-
   constructor(
+    private localStorageService: LocalStorageService,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
@@ -46,5 +46,23 @@ export class AppComponent {
         { title: 'FeedBack', url: '/home', icon: 'cash' },
         { title: 'Help', url: '/home', icon: 'cash' },
       ];
-  }
+    }
+    nullUser = {
+        shopName: 'Null',
+        phone: 'NULL',
+        email: 'null',
+        accounts: {phone: 'nUll', passwordToken: 'nUlL'},
+        registerDate: new Date().toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, ''),
+        shortName: '',
+        owner: '',
+        shopPhone: '',
+        businessType: ''
+    };
+
+  currentUser = this.localStorageService.get('currentUser', this.nullUser);
+  userInfo : any = {
+    name : this.currentUser.shopName,
+    tel  : this.currentUser.phone,
+    email: this.currentUser.email
+  };
 }

@@ -1,8 +1,8 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/cubic-bezier-90d0df24.js":
+/***/ "./node_modules/@ionic/core/dist/esm/cubic-bezier-2812fda3.js":
 /*!********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/cubic-bezier-90d0df24.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/cubic-bezier-2812fda3.js ***!
   \********************************************************************/
 /*! exports provided: P, g */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -31,6 +31,9 @@ class Point {
  * P1: (0.32, 0.72)
  * P2: (0, 1)
  * P3: (1, 1)
+ *
+ * If you give a cubic bezier curve that never reaches the
+ * provided progression, this function will return NaN.
  */
 const getTimeGivenProgression = (p0, p1, p2, p3, progression) => {
     const tValues = solveCubicBezier(p0.y, p1.y, p2.y, p3.y, progression);
@@ -105,9 +108,9 @@ const solveCubicEquation = (a, b, c, d) => {
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/framework-delegate-00265c49.js":
+/***/ "./node_modules/@ionic/core/dist/esm/framework-delegate-c2e2e1f4.js":
 /*!**************************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-00265c49.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-c2e2e1f4.js ***!
   \**************************************************************************/
 /*! exports provided: a, d */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -154,9 +157,9 @@ const detachComponent = (delegate, element) => {
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/haptic-4e92c885.js":
+/***/ "./node_modules/@ionic/core/dist/esm/haptic-c8f1473e.js":
 /*!**************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/haptic-4e92c885.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/haptic-c8f1473e.js ***!
   \**************************************************************/
 /*! exports provided: a, b, c, h */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -215,126 +218,9 @@ const hapticSelectionEnd = () => {
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/helpers-c90aaa66.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/helpers-c90aaa66.js ***!
-  \***************************************************************/
-/*! exports provided: a, b, c, d, e, f, h, i, n, p, r */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return rIC; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return assert; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return clamp; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return debounceEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return debounce; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return findItemLabel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hasShadowDom; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return isEndSide; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return now; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return pointerCoord; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return renderHiddenInput; });
-const rIC = (callback) => {
-    if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(callback);
-    }
-    else {
-        setTimeout(callback, 32);
-    }
-};
-const hasShadowDom = (el) => {
-    return !!el.shadowRoot && !!el.attachShadow;
-};
-const findItemLabel = (componentEl) => {
-    const itemEl = componentEl.closest('ion-item');
-    if (itemEl) {
-        return itemEl.querySelector('ion-label');
-    }
-    return null;
-};
-const renderHiddenInput = (always, container, name, value, disabled) => {
-    if (always || hasShadowDom(container)) {
-        let input = container.querySelector('input.aux-input');
-        if (!input) {
-            input = container.ownerDocument.createElement('input');
-            input.type = 'hidden';
-            input.classList.add('aux-input');
-            container.appendChild(input);
-        }
-        input.disabled = disabled;
-        input.name = name;
-        input.value = value || '';
-    }
-};
-const clamp = (min, n, max) => {
-    return Math.max(min, Math.min(n, max));
-};
-const assert = (actual, reason) => {
-    if (!actual) {
-        const message = 'ASSERT: ' + reason;
-        console.error(message);
-        debugger; // tslint:disable-line
-        throw new Error(message);
-    }
-};
-const now = (ev) => {
-    return ev.timeStamp || Date.now();
-};
-const pointerCoord = (ev) => {
-    // get X coordinates for either a mouse click
-    // or a touch depending on the given event
-    if (ev) {
-        const changedTouches = ev.changedTouches;
-        if (changedTouches && changedTouches.length > 0) {
-            const touch = changedTouches[0];
-            return { x: touch.clientX, y: touch.clientY };
-        }
-        if (ev.pageX !== undefined) {
-            return { x: ev.pageX, y: ev.pageY };
-        }
-    }
-    return { x: 0, y: 0 };
-};
-/**
- * @hidden
- * Given a side, return if it should be on the end
- * based on the value of dir
- * @param side the side
- * @param isRTL whether the application dir is rtl
- */
-const isEndSide = (side) => {
-    const isRTL = document.dir === 'rtl';
-    switch (side) {
-        case 'start': return isRTL;
-        case 'end': return !isRTL;
-        default:
-            throw new Error(`"${side}" is not a valid value for [side]. Use "start" or "end" instead.`);
-    }
-};
-const debounceEvent = (event, wait) => {
-    const original = event._original || event;
-    return {
-        _original: event,
-        emit: debounce(original.emit.bind(original), wait)
-    };
-};
-const debounce = (func, wait = 0) => {
-    let timer;
-    return (...args) => {
-        clearTimeout(timer);
-        timer = setTimeout(func, wait, ...args);
-    };
-};
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@ionic/core/dist/esm/index-064a03a9.js":
+/***/ "./node_modules/@ionic/core/dist/esm/index-3476b023.js":
 /*!*************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/index-064a03a9.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/index-3476b023.js ***!
   \*************************************************************/
 /*! exports provided: s */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -391,10 +277,10 @@ const sanitizeDOMString = (untrustedString) => {
          * non-allowed attribs
          */
         // IE does not support .children on document fragments, only .childNodes
-        const documentFragmentChildren = getElementChildren(documentFragment);
+        const dfChildren = getElementChildren(documentFragment);
         /* tslint:disable-next-line */
-        for (let childIndex = 0; childIndex < documentFragmentChildren.length; childIndex++) {
-            sanitizeElement(documentFragmentChildren[childIndex]);
+        for (let childIndex = 0; childIndex < dfChildren.length; childIndex++) {
+            sanitizeElement(dfChildren[childIndex]);
         }
         // Append document fragment to div
         const fragmentDiv = document.createElement('div');
@@ -447,8 +333,8 @@ const sanitizeElement = (element) => {
  * IE doesn't always support .children
  * so we revert to .childNodes instead
  */
-const getElementChildren = (element) => {
-    return (element.children != null) ? element.children : element.childNodes;
+const getElementChildren = (el) => {
+    return (el.children != null) ? el.children : el.childNodes;
 };
 const allowedAttributes = ['class', 'id', 'href', 'src', 'name', 'slot'];
 const blockedTags = ['script', 'style', 'iframe', 'meta', 'link', 'object', 'embed'];
@@ -458,29 +344,30 @@ const blockedTags = ['script', 'style', 'iframe', 'meta', 'link', 'object', 'emb
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/index-84f27767.js":
+/***/ "./node_modules/@ionic/core/dist/esm/index-4d91f03a.js":
 /*!*************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/index-84f27767.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/index-4d91f03a.js ***!
   \*************************************************************/
-/*! exports provided: d, l, s, t */
+/*! exports provided: d, g, l, s, t */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return deepReady; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getIonPageElement; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return lifecycle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return setPageHidden; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return transition; });
-/* harmony import */ var _core_5ba38749_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-5ba38749.js */ "./node_modules/@ionic/core/dist/esm/core-5ba38749.js");
-/* harmony import */ var _constants_94c4865f_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants-94c4865f.js */ "./node_modules/@ionic/core/dist/esm/constants-94c4865f.js");
+/* harmony import */ var _core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-feeeff0d.js */ "./node_modules/@ionic/core/dist/esm/core-feeeff0d.js");
+/* harmony import */ var _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants-3c3e1099.js */ "./node_modules/@ionic/core/dist/esm/constants-3c3e1099.js");
 
 
 
-const iosTransitionAnimation = () => __webpack_require__.e(/*! import() | ios-transition-96fe915f-js */ "ios-transition-96fe915f-js").then(__webpack_require__.bind(null, /*! ./ios.transition-96fe915f.js */ "./node_modules/@ionic/core/dist/esm/ios.transition-96fe915f.js"));
-const mdTransitionAnimation = () => __webpack_require__.e(/*! import() | md-transition-bf76a31e-js */ "md-transition-bf76a31e-js").then(__webpack_require__.bind(null, /*! ./md.transition-bf76a31e.js */ "./node_modules/@ionic/core/dist/esm/md.transition-bf76a31e.js"));
+const iosTransitionAnimation = () => __webpack_require__.e(/*! import() | ios-transition-504cdd09-js */ "ios-transition-504cdd09-js").then(__webpack_require__.bind(null, /*! ./ios.transition-504cdd09.js */ "./node_modules/@ionic/core/dist/esm/ios.transition-504cdd09.js"));
+const mdTransitionAnimation = () => __webpack_require__.e(/*! import() | md-transition-fea2bbfb-js */ "md-transition-fea2bbfb-js").then(__webpack_require__.bind(null, /*! ./md.transition-fea2bbfb.js */ "./node_modules/@ionic/core/dist/esm/md.transition-fea2bbfb.js"));
 const transition = (opts) => {
     return new Promise((resolve, reject) => {
-        Object(_core_5ba38749_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+        Object(_core_feeeff0d_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
             beforeTransition(opts);
             runTransition(opts).then(result => {
                 if (result.animation) {
@@ -541,7 +428,7 @@ const animation = async (animationBuilder, opts) => {
     await waitForReady(opts, true);
     let trans;
     try {
-        const mod = await __webpack_require__.e(/*! import() | index-ae28cb4b-js */ "index-ae28cb4b-js").then(__webpack_require__.bind(null, /*! ./index-ae28cb4b.js */ "./node_modules/@ionic/core/dist/esm/index-ae28cb4b.js"));
+        const mod = await __webpack_require__.e(/*! import() | index-69c37885-js */ "index-69c37885-js").then(__webpack_require__.bind(null, /*! ./index-69c37885.js */ "./node_modules/@ionic/core/dist/esm/index-69c37885.js"));
         trans = await mod.create(animationBuilder, opts.baseEl, opts);
     }
     catch (err) {
@@ -549,16 +436,14 @@ const animation = async (animationBuilder, opts) => {
     }
     fireWillEvents(opts.enteringEl, opts.leavingEl);
     const didComplete = await playTransition(trans, opts);
-    // TODO: Remove AnimationBuilder
-    trans.hasCompleted = didComplete;
     if (opts.progressCallback) {
         opts.progressCallback(undefined);
     }
-    if (trans.hasCompleted) {
+    if (didComplete) {
         fireDidEvents(opts.enteringEl, opts.leavingEl);
     }
     return {
-        hasCompleted: trans.hasCompleted,
+        hasCompleted: didComplete,
         animation: trans
     };
 };
@@ -592,7 +477,16 @@ const notifyViewReady = async (viewIsReady, enteringEl) => {
 const playTransition = (trans, opts) => {
     const progressCallback = opts.progressCallback;
     // TODO: Remove AnimationBuilder
-    const promise = new Promise(resolve => trans.onFinish(resolve));
+    const promise = new Promise(resolve => {
+        trans.onFinish((currentStep) => {
+            if (typeof currentStep === 'number') {
+                resolve(currentStep === 1);
+            }
+            else if (trans.hasCompleted !== undefined) {
+                resolve(trans.hasCompleted);
+            }
+        });
+    });
     // cool, let's do this, start the transition
     if (progressCallback) {
         // this is a swipe to go back, just get the transition progress ready
@@ -610,12 +504,12 @@ const playTransition = (trans, opts) => {
     return promise;
 };
 const fireWillEvents = (enteringEl, leavingEl) => {
-    lifecycle(leavingEl, _constants_94c4865f_js__WEBPACK_IMPORTED_MODULE_1__["b"]);
-    lifecycle(enteringEl, _constants_94c4865f_js__WEBPACK_IMPORTED_MODULE_1__["L"]);
+    lifecycle(leavingEl, _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__["b"]);
+    lifecycle(enteringEl, _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__["L"]);
 };
 const fireDidEvents = (enteringEl, leavingEl) => {
-    lifecycle(enteringEl, _constants_94c4865f_js__WEBPACK_IMPORTED_MODULE_1__["a"]);
-    lifecycle(leavingEl, _constants_94c4865f_js__WEBPACK_IMPORTED_MODULE_1__["c"]);
+    lifecycle(enteringEl, _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__["a"]);
+    lifecycle(leavingEl, _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__["c"]);
 };
 const lifecycle = (el, eventName) => {
     if (el) {
@@ -665,15 +559,26 @@ const setZIndex = (enteringEl, leavingEl, direction) => {
         leavingEl.style.zIndex = '100';
     }
 };
+const getIonPageElement = (element) => {
+    if (element.classList.contains('ion-page')) {
+        return element;
+    }
+    const ionPage = element.querySelector(':scope > .ion-page, :scope > ion-nav, :scope > ion-tabs');
+    if (ionPage) {
+        return ionPage;
+    }
+    // idk, return the original element so at least something animates and we don't have a null pointer
+    return element;
+};
 
 
 
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/theme-353a032e.js":
+/***/ "./node_modules/@ionic/core/dist/esm/theme-18cbe2cc.js":
 /*!*************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/theme-353a032e.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/theme-18cbe2cc.js ***!
   \*************************************************************/
 /*! exports provided: c, g, h, o */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -730,9 +635,9 @@ const openURL = async (url, ev, direction) => {
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm/watch-options-56e2e31f.js":
+/***/ "./node_modules/@ionic/core/dist/esm/watch-options-2af96011.js":
 /*!*********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/watch-options-56e2e31f.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/watch-options-2af96011.js ***!
   \*********************************************************************/
 /*! exports provided: f, w */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -771,6 +676,204 @@ const findCheckedOption = (el, tagName) => {
     return options.find((o) => o.checked === true);
 };
 
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/authentiaction-code.service.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/shared/services/authentiaction-code.service.ts ***!
+  \****************************************************************/
+/*! exports provided: AuthentiactionCodeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthentiactionCodeService", function() { return AuthentiactionCodeService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let AuthentiactionCodeService = class AuthentiactionCodeService {
+    constructor() {
+        this.code = '';
+    }
+    // 生成指定长度的随机数字
+    createCode(count) {
+        this.code = '';
+        // 10分钟内有效
+        this.deadline = Date.now() + 60 * 10 * 1000;
+        for (let i = 0; i < count; i++) {
+            let num = Math.floor(Math.random() * 10);
+            this.code += num.toString();
+        }
+        console.log('code = ' + this.code);
+        return this.code;
+    }
+    //验证用户输入的短信验证码是否一致，是否过期
+    validate(value) {
+        const now = Date.now();
+        return value === this.code && now < this.deadline;
+    }
+};
+AuthentiactionCodeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], AuthentiactionCodeService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/user-service.service.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/shared/services/user-service.service.ts ***!
+  \*********************************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _local_storage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./local-storage.service */ "./src/app/shared/services/local-storage.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+let UserService = class UserService {
+    constructor(localStorageService, alertController, router) {
+        this.localStorageService = localStorageService;
+        this.alertController = alertController;
+        this.router = router;
+    }
+    // 实现注册方法
+    signup_lyy(register) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            // return
+            const user = {
+                shopName: register.shopName,
+                phone: register.phone,
+                email: register.email,
+                accounts: { phone: register.phone, passwordToken: register.password },
+                registerDate: new Date().toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, ''),
+                shortName: '',
+                owner: '',
+                shopPhone: '',
+                businessType: ''
+            };
+            let u = this.localStorageService.get('user', []);
+            u.push(user);
+            this.localStorageService.set('user', u);
+        });
+    }
+    signup(register) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return new Promise(((resolve, reject) => {
+                // resolve();
+            }));
+        });
+    }
+    // 实现登录方法
+    login(username, password) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            let isUser = this.localStorageService.get('user', null);
+            console.log(isUser);
+            console.log(username);
+            console.log(password);
+            // 登录错误提示
+            if (isUser === 'null') {
+                console.log('No user yet!');
+            }
+            let noUser = true;
+            for (let u of isUser) {
+                console.log('user.phone = ' + u.phone);
+                console.log('user.email = ' + u.email);
+                console.log(u.phone == username);
+                console.log(u.email == username);
+                if (u.phone == username || u.email == username) {
+                    console.log('if phone === username');
+                    noUser = false;
+                    if (u.accounts.passwordToken == password) {
+                        console.log('password == ');
+                        this.router.navigateByUrl('\home');
+                        this.localStorageService.set('currentUser', u);
+                        break;
+                    }
+                    else {
+                        console.log('Error password');
+                        const alert = yield this.alertController.create({
+                            header: 'Tips',
+                            // subHeader: 'sfd',
+                            message: 'Password is error!',
+                            buttons: ['Confirm']
+                        });
+                        alert.present();
+                    }
+                }
+                else {
+                    console.log('Not this user!');
+                }
+            }
+            if (noUser) {
+                console.log('No this user!');
+                const alert = yield this.alertController.create({
+                    header: 'Tips',
+                    // subHeader: 'sfd',
+                    message: 'No this user!',
+                    buttons: ['Confirm']
+                });
+                alert.present();
+            }
+        });
+    }
+    // 修改密码
+    update(phone, password) {
+        let user = this.localStorageService.get('user', null);
+        if (user != null) {
+            for (let u of user) {
+                if (u.phone == phone) {
+                    u.accounts.passwordToken = password;
+                    break;
+                }
+            }
+            this.localStorageService.set('user', user);
+            return true;
+        }
+        return false;
+    }
+    // 判断手机号是否已经存在
+    check(phone) {
+        let user = this.localStorageService.get('user', null);
+        if (user != null) {
+            for (let u of user) {
+                if (u.phone == phone) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+};
+UserService.ctorParameters = () => [
+    { type: _local_storage_service__WEBPACK_IMPORTED_MODULE_2__["LocalStorageService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+];
+UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_local_storage_service__WEBPACK_IMPORTED_MODULE_2__["LocalStorageService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+], UserService);
 
 
 

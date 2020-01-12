@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, AlertController } from '@ionic/angular';
 import { AuthentiactionCodeService } from 'src/app/shared/services/authentiaction-code.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/services/user-service.service';
@@ -26,7 +26,7 @@ export class SignupPage implements OnInit {
   // 依赖注入
   @ViewChild('signupSlides', {static: false}) signupSlides: IonSlides;
   constructor(private authenticationCodeService: AuthentiactionCodeService, private userService: UserService, 
-    private router: Router) { }
+    private router: Router, public alertCtrl : AlertController) { }
   // tslint:disable-next-line:member-ordering
   randomCode = null;
   verifyCode: any = {
@@ -54,8 +54,15 @@ export class SignupPage implements OnInit {
       // this.onNext();
     }
   }
-  onSendSMS() {
+  async onSendSMS() {
     this.randomCode = this.authenticationCodeService.createCode(4);
+    let alert = await this.alertCtrl.create({
+        header : 'Code',
+        message: 'Your code is ' + this.randomCode,
+        buttons: ['OK']
+    });
+    alert.present();
+
     console.log('随机生成4位随机数:' + this.randomCode);
     // 点击按钮后开始倒计时
     this.verifyCode.disable = false;
@@ -77,16 +84,30 @@ export class SignupPage implements OnInit {
      this.settime();
     }, 1000);
    }
-  onValidateCode(form: NgForm) {
+  async onValidateCode(form: NgForm) {
     if (form.valid) {
       // 已通过客户端验证
       const inputCode = this.signup.code;
       // tslint:disable-next-line:triple-equals
       if (inputCode == this.randomCode) {
         console.log('验证通过');
+        let alert = await this.alertCtrl.create({
+            header : 'Code',
+            message: 'Your code is Right!',
+            buttons: ['OK']
+          });
+          alert.present();
       } else {
         console.log('验证码不正确');
+        let alert = await this.alertCtrl.create({
+            header : 'Code',
+            message: 'Your code is Wrong!',
+            buttons: ['OK']
+        });
+        alert.present();
       }
+
+      
       // this.onNext();
     }
   }

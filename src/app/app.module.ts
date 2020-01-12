@@ -23,6 +23,7 @@ import { LocalStorageService } from './shared/services/local-storage.service';
   providers: [
     StatusBar,
     SplashScreen,
+    Location,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     LocalStorageService
   ],

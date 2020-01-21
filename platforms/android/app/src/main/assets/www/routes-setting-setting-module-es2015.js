@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar>\n      <ion-title>Settings</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content color=\"medium\">\n    <ion-list inset=\"true\">\n      <ion-item detail href=\"/shopsetting\">\n        <ion-label>Shop Settings</ion-label>\n      </ion-item>\n    <ion-item detail href=\"/change-password\">\n      <ion-label>Change Password</ion-label>\n    </ion-item>\n    </ion-list>\n    <ion-list inset=\"true\">\n      <ion-item detail href=\"/about-us\">\n        <ion-label>About us</ion-label>\n      </ion-item>\n      <ion-item>\n        <ion-label>Contact Customer Service</ion-label>\n        <ion-note slot=\"end\"><a href=\"Tel:13067373231\">13067373231</a></ion-note>\n      </ion-item>\n      <ion-item detail (click)=\"checkUpdate()\">\n        <ion-label>Versions: {{version}}</ion-label>\n        <ion-note slot=\"end\">Check for updates</ion-note>\n      </ion-item>\n    </ion-list>\n    <ion-list inset=\"true\">\n      <ion-item detail (click)=\"onLogout()\">\n        <ion-label>Sign out safely</ion-label>\n      </ion-item>\n    </ion-list>\n    <!-- ����ʡ�� -->\n  </ion-content>\n  ");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar>\r\n      <ion-title>设置</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content color=\"medium\">\r\n    <ion-list inset=\"true\">\r\n      <ion-item detail href=\"/shopsetting\">\r\n        <ion-label>店铺设置</ion-label>\r\n      </ion-item>\r\n    <ion-item detail href=\"/change-password\">\r\n      <ion-label>修改密码</ion-label>\r\n    </ion-item>\r\n    </ion-list>\r\n    <ion-list inset=\"true\">\r\n      <ion-item detail href=\"/about-us\">\r\n        <ion-label>关于</ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label>联系客服</ion-label>\r\n        <ion-note slot=\"end\"><a href=\"Tel:13067373231\">13067373231</a></ion-note>\r\n      </ion-item>\r\n      <ion-item detail (click)=\"checkUpdate()\">\r\n        <ion-label>版本号: {{version}}</ion-label>\r\n        <ion-note slot=\"end\">检测更新</ion-note>\r\n      </ion-item>\r\n    </ion-list>\r\n    <ion-list inset=\"true\">\r\n      <ion-item detail (click)=\"onLogout()\">\r\n        <ion-label>安全退出</ion-label>\r\n      </ion-item>\r\n    </ion-list>\r\n    <!-- ÆäËûÊ¡ÂÔ -->\r\n  </ion-content>\r\n  ");
 
 /***/ }),
 
@@ -103,7 +103,7 @@ let SettingPage = class SettingPage {
     ionViewWillEnter() {
         let appConfig = this.localStorageService.get('App', {
             hasRun: false,
-            version: '1.0.0'
+            version: '1.1.1'
         });
         this.version = appConfig.version;
     }
@@ -115,11 +115,10 @@ let SettingPage = class SettingPage {
     }
     checkUpdate() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            // �ж��Ƿ�Ϊ���°汾
             let alert = yield this.alertController.create({
-                header: 'Tips',
-                message: 'This is the latest version',
-                buttons: ['Confirm']
+                header: '提示',
+                message: '已经是最新版本',
+                buttons: ['确认']
             });
             alert.present();
         });

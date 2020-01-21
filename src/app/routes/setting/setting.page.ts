@@ -15,7 +15,7 @@ export class SettingPage implements OnInit {
     ionViewWillEnter() {
         let appConfig: any = this.localStorageService.get('App', {
             hasRun: false,
-            version: '1.0.0'
+            version: '1.1.1'
         });
         this.version = appConfig.version;
     }
@@ -26,11 +26,10 @@ export class SettingPage implements OnInit {
       this.router.navigateByUrl('login');
     }
     async checkUpdate() {
-      // �ж��Ƿ�Ϊ���°汾
         let alert =await this.alertController.create({
-            header: 'Tips',
-            message: 'This is the latest version',
-            buttons: ['Confirm']
+            header: '提示',
+            message: '已经是最新版本',
+            buttons: ['确认']
         });
         alert.present();
     }

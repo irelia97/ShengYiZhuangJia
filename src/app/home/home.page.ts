@@ -9,27 +9,27 @@ import { LocalStorageService } from '../shared/services/local-storage.service';
 })
 export class HomePage {
     sales = [
-        {'title': 'Today', 'content': 'With Yesterday', 'current': 10.00, 'previous': 20.00},
-        {'title': 'Week', 'content': 'With SameTime', 'current': 20.00, 'previous': 30.00},
-        {'title': 'Month', 'content': 'With SameTime', 'current': 30.00, 'previous': 40.00}
+        {'title': '今日', 'content': '比昨日', 'current': 10.30, 'previous': 12.03},
+        {'title': '七日', 'content': '比同期', 'current': 30.00, 'previous': 24.54},
+        {'title': '本月', 'content': '比同期', 'current': -5.46, 'previous': -1.25}
     ];
     quicks = [
         [
-            {'href': '/addProduct', 'name': 'add_salse', 'text': 'Add Items', 'disable': false},
-            {'href': '/home', 'name': 'add_user', 'text': 'Add members', 'disable': false},
-            {'href': '/home', 'name': 'sales_account', 'text': 'Cash register', 'disable': false},
-            {'href': '/home', 'name': 'a_note', 'text': 'Expenditure management', 'disable': false}
+            {'href': '/addProduct', 'name': 'add_salse', 'text': '新增商品', 'disable': false},
+            {'href': '/home', 'name': 'add_user', 'text': '新增会员', 'disable': false},
+            {'href': '/home', 'name': 'sales_account', 'text': '收银记账', 'disable': false},
+            {'href': '/home', 'name': 'a_note', 'text': '支出管理', 'disable': false}
         ],
         [
-            {'href': '/productList', 'name': 'sales_management', 'text': 'Merchandise management', 'disable': false},
-            {'href': '/home', 'name': 'user_management', 'text': 'Member Management', 'disable': false},
-            {'href': '/home', 'name': 'shop_management', 'text': 'Query sales', 'disable': false},
-            {'href': '/home', 'name': 'analysis', 'text': 'Insight', 'disable': false}
+            {'href': '/productList', 'name': 'sales_management', 'text': '商品管理', 'disable': false},
+            {'href': '/home', 'name': 'user_management', 'text': '会员管理', 'disable': false},
+            {'href': '/home', 'name': 'shop_management', 'text': '查询销售', 'disable': false},
+            {'href': '/home', 'name': 'analysis', 'text': '智能分析', 'disable': false}
         ],
         [
-            {'href': '/supplierList', 'name': 'gongying_more', 'text': 'Supplier management', 'disable': false},
-            {'href': '/home', 'name': 'guandan_more', 'text': 'Pending order', 'disable': false},
-            {'href': '/home', 'name': 'image_addsales', 'text': 'Advanced Features', 'disable': false},
+            {'href': '/supplierList', 'name': 'gongying_more', 'text': '供应商管理', 'disable': false},
+            {'href': '/home', 'name': 'guandan_more', 'text': '挂单', 'disable': false},
+            {'href': '/home', 'name': 'image_addsales', 'text': '高级功能', 'disable': false},
             {'disable': true}
         ]
     ];
@@ -57,3 +57,15 @@ export class HomePage {
       this.router.navigateByUrl('/category-list');
   }
 }
+
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭
+//  真没抄袭

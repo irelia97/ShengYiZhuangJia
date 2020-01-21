@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>登录</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content no-padding>\n  <img src=\"assets/img/logoin_title.jpg\" alt=\"\">\n  <div padding-horizontal>\n    <form #loginForm=\"ngForm\">\n      <ion-list padding-right no-margin>\n        <ion-item lines=\"none\"></ion-item>\n        <ion-item>\n          <ion-label position=\"fixed\">账号</ion-label>\n          <ion-input name=\"username\" type=\"text\" placeholder=\"手机号或者电子邮箱\" [(ngModel)]=\"username\" required></ion-input>\n        </ion-item>\n        <ion-item margin-top>\n          <ion-label position=\"fixed\">密码</ion-label>\n          <ion-input name=\"password\" type=\"password\" placeholder=\"您的生意专家登录密码\" [(ngModel)]=\"password\"></ion-input>\n        </ion-item>\n        <ion-item no-lines></ion-item>\n      </ion-list>\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            <ion-button expand=\"full\" color=\"primary\" (click)=\"onLogin()\">登录</ion-button>\n          </ion-col>\n          <ion-col>\n            <ion-button expand=\"full\" fill=\"outline\" color=\"primary\" href=\"/signup\">注册新账号</ion-button>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-button fill=\"clear\" size=\"small\" (click)=\"openForgotPassword()\">忘记密码？</ion-button>\n          </ion-col>\n        </ion-row>\n        <ion-row text-center>\n          <ion-col>查看演示</ion-col>\n        </ion-row>\n      </ion-grid>\n    </form>\n  </div>\n  \n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>登录</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content no-padding>\n  <img src=\"assets/img/logoin_title.jpg\" alt=\"\">\n  <div padding-horizontal>\n    <form #loginForm=\"ngForm\">\n      <ion-list padding-right no-margin>\n        <ion-item lines=\"none\"></ion-item>\n        <ion-item>\n          <ion-label position=\"fixed\">账号</ion-label>\n          <ion-input name=\"username\" type=\"text\" placeholder=\"手机号或者电子邮箱\" [(ngModel)]=\"username\" required></ion-input>\n        </ion-item>\n        <ion-item margin-top>\n          <ion-label position=\"fixed\">密码</ion-label>\n          <ion-input name=\"password\" type=\"password\" placeholder=\"您的生意专家登录密码\" [(ngModel)]=\"password\"></ion-input>\n        </ion-item>\n        <ion-item no-lines></ion-item>\n      </ion-list>\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            <ion-button expand=\"full\" color=\"primary\" (click)=\"onLogin()\">登录</ion-button>\n          </ion-col>\n          <ion-col>\n            <ion-button expand=\"full\" fill=\"outline\" color=\"primary\" href=\"/signup\">注册</ion-button>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-button fill=\"clear\" size=\"small\" (click)=\"openForgotPassword()\">忘记密码</ion-button>\n          </ion-col>\n        </ion-row>\n        <ion-row text-center>\n          <ion-col>查看演示</ion-col>\n        </ion-row>\n      </ion-grid>\n    </form>\n  </div>\n  \n</ion-content>\n");
 
 /***/ }),
 
@@ -100,8 +100,8 @@ let LoginPage = class LoginPage {
         this.userService = userService;
         this.alertController = alertController;
         this.router = router;
-        this.username = ''; // ��ͼģ�͵������˺ţ�˫���
-        this.password = ''; // ��ͼģ�͵��������룬˫���
+        this.username = ''; // 视图模型的属性账号，双向绑定
+        this.password = ''; // 视图模型的属性密码，双向绑定
     }
     ngOnInit() {
     }
@@ -111,19 +111,19 @@ let LoginPage = class LoginPage {
             //console.log(form);
             if (this.username === '') {
                 const toast = yield this.toastController.create({
-                    message: 'Please input your Tel or Email',
+                    message: '请输入您的手机号或邮箱',
                     duration: 3000
                 });
                 toast.present();
             }
             else if (this.password === '') {
                 const toast = yield this.toastController.create({
-                    message: 'Please input password',
+                    message: '请输入密码',
                     duration: 3000
                 });
                 toast.present();
             }
-            //  ���������ĵ�¼����
+            //  调用真正的登录方法
             this.userService.login(this.username, this.password);
         });
     }

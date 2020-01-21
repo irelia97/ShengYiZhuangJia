@@ -7,37 +7,37 @@
   <ion-content padding color="medium">
     <ion-list inset="true">
       <ion-item detail routerLink="/editShop" [queryParams]="{title:'店铺名称',property:'shopName'}">
-        <ion-label>Shop Name</ion-label>
+        <ion-label>店铺名称</ion-label>
         <ion-note slot="end">{{shop.shopName}}</ion-note>
       </ion-item>
       <ion-item detail routerLink="/editShop" [queryParams]="{title:'店铺昵称',property:'shortName'}">
-        <ion-label>Shop NickName</ion-label>
+        <ion-label>店铺昵称</ion-label>
         <ion-note slot="end">{{shop.shortName}}</ion-note>
       </ion-item>
       <ion-item>
-        <ion-label>Registration time</ion-label>
+        <ion-label>注册时间</ion-label>
         <ion-note slot="end">{{shop.registerDate | date: "yyyy/MM/dd hh:mm"}}</ion-note>
       </ion-item>
       <ion-item>
-        <ion-label>Tel</ion-label>
+        <ion-label>手机号码</ion-label>
         <ion-note slot="end">{{shop.phone}}</ion-note>
       </ion-item>
     </ion-list>
     <ion-list inset="true">
       <ion-item>
-        <ion-label>Email</ion-label>
+        <ion-label>电子邮箱</ion-label>
         <ion-note slot="end">{{shop.email}}</ion-note>
       </ion-item>
       <ion-item detail routerLink="/editShop" [queryParams]="{title:'店主姓名',property:'owner'}">
-        <ion-label>Owner name</ion-label>
+        <ion-label>店主姓名</ion-label>
         <ion-note slot="end">{{shop.owner}}</ion-note>
       </ion-item>
       <ion-item detail routerLink="/editShop" [queryParams]="{title:'店铺电话',property:'shopPhone'}">
-        <ion-label>Owner Tel</ion-label>
+        <ion-label>店铺电话</ion-label>
         <ion-note slot="end">{{shop.shopPhone}}</ion-note>
       </ion-item>
       <ion-item detail routerLink="/editShop" [queryParams]="{title:'行业类型',property:'businessType'}">
-        <ion-label>Industry type</ion-label>
+        <ion-label>行业类型</ion-label>
         <ion-note slot="end">{{shop.businessType}}</ion-note>
       </ion-item>
     </ion-list>

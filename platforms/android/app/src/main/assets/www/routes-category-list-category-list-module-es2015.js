@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-button color=\"light\" (click)=\"back()\">\n          <ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n      <ion-title>��Ʒ����</ion-title>\n      <ion-buttons slot=\"end\">\n        <ion-button color=\"light\" routerLink=\"/addCategory\" [queryParams]=\"{'id': 0, 'name': ''}\">\n          <ion-icon slot=\"icon-only\" name=\"add\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content no-padding>\n    <ion-grid no-padding>\n      <ion-row no-padding align-items-stretch>\n        <ion-col size=\"5\" no-padding left>\n          <ion-list lines=\"full\" color=\"light\">\n            <ion-item color=\"light\">�����</ion-item>\n            <ion-item *ngFor=\"let c of categories\" [color]=\"getItemColor(c.id)\" (click)=\"onSelectCategory(c.id)\" [ngClass]=\"{'item-active': c.id===activeCategory.id}\">\n              {{c.name}}\n            </ion-item>\n          </ion-list>\n        </ion-col>\n        <ion-col size=\"7\" no-padding>\n          <ion-list lines=\"none\">\n            <ion-item lines=\"full\">С����</ion-item>\n            <ion-item detail lines=\"full\" (click)=\"onSelectSubCategory(activeCategory)\">��С�����������</ion-item>\n            <ion-item detail *ngFor=\"let ac of activeCategory.children\" lines=\"full\" (click)=\"onSelectSubCategory(ac)\">\n              {{ac.name}}\n            </ion-item>\n            <ion-item detail=\"false\" routerLink=\"/addCategory\" [queryParams]=\"{'id': activeCategory.id, 'name': activeCategory.name}\">\n              <ion-icon slot=\"start\" name='add-circle' color=\"primary\"></ion-icon>\n              <ion-label color=\"primary\">����С����</ion-label>\n            </ion-item>\n          </ion-list>\n          <ion-list class=\"list-footer\" lines=\"none\" no-margin >\n            <ion-item lines=\"full\">\n              <ion-text *ngIf=\"activeCategory.children.length===0\"><h6>Ŀǰû��С����</h6></ion-text>\n              <ion-text *ngIf=\"activeCategory.children.length!==0\">��{{activeCategory.children.length}}����Ʒ����</ion-text>\n              <ion-button color=\"light\" slot=\"end\" (click)=\"onPresentActionSheet()\">\n                <ion-icon slot=\"icon-only\" name=\"more\"></ion-icon>\n              </ion-button>\n            </ion-item>\n          </ion-list>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-content>\n  ");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar color=\"primary\">\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button color=\"light\" href=\"\\home\">\r\n          <ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n      <ion-title>商品分类</ion-title>\r\n      <ion-buttons slot=\"end\">\r\n        <ion-button color=\"light\" href=\"\\add-category\">\r\n          <ion-icon slot=\"icon-only\" name=\"add\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content no-padding>\r\n    <ion-grid no-padding>\r\n      <ion-row no-padding align-items-stretch>\r\n        <ion-col size=\"5\" no-padding left>\r\n          <ion-list lines=\"full\" color=\"light\">\r\n            <ion-item color=\"light\">大分类</ion-item>\r\n            <ion-item *ngFor=\"let c of categories\" [color]=\"getItemColor(c.id)\" (click)=\"onSelectCategory(c.id)\" [ngClass]=\"{'item-active': c.id===activeCategory.id}\">\r\n              {{c.name}}\r\n            </ion-item>\r\n          </ion-list>\r\n        </ion-col>\r\n        <ion-col size=\"7\" no-padding>\r\n          <ion-list lines=\"none\">\r\n            <ion-item lines=\"full\">小分类</ion-item>\r\n            <ion-item detail lines=\"full\">无小分类进入大分类</ion-item>\r\n            <ion-item detail *ngFor=\"let ac of activeCategory.children\" lines=\"full\">\r\n              {{ac.name}}\r\n            </ion-item>\r\n            <ion-item detail=\"false\" routerLink=\"/addCategory\" [queryParams]=\"{'id': activeCategory.id, 'name': activeCategory.name}\">\r\n              <ion-icon slot=\"start\" name='add-circle' color=\"primary\"></ion-icon>\r\n              <ion-label color=\"primary\">新增小分类</ion-label>\r\n            </ion-item>\r\n          </ion-list>\r\n          <ion-list class=\"list-footer\" lines=\"none\" no-margin >\r\n            <ion-item lines=\"full\">\r\n              <ion-text *ngIf=\"activeCategory.children.length===0\"><h6>目前没有小分类</h6></ion-text>\r\n              <ion-text *ngIf=\"activeCategory.children.length!==0\">共{{activeCategory.children.length}}种商品分类</ion-text>\r\n              <ion-button color=\"light\" slot=\"end\" (click)=\"onPresentActionSheet()\">\r\n                <ion-icon slot=\"icon-only\" name=\"more\"></ion-icon>\r\n              </ion-button>\r\n            </ion-item>\r\n          </ion-list>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-content>\r\n  ");
 
 /***/ }),
 
@@ -95,12 +95,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CategoryListPage = class CategoryListPage {
-    constructor(categoryService, actionSheetController, router, events, location) {
+    constructor(categoryService, actionSheetController, router, events) {
         this.categoryService = categoryService;
         this.actionSheetController = actionSheetController;
         this.router = router;
         this.events = events;
-        this.location = location;
         this.count = 0;
         categoryService.getAll().then((data) => {
             this.categories = data.result;
@@ -122,21 +121,21 @@ let CategoryListPage = class CategoryListPage {
     onPresentActionSheet() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             const actionSheet = yield this.actionSheetController.create({
-                header: 'ѡ�����Ĳ���',
+                header: '选择您的操作',
                 buttons: [
                     {
-                        text: '����С����',
+                        text: '新增小分类',
                         role: 'destructive',
                         handler: () => {
-                            this.router.navigate(['/addCategory'], { queryParams: { 'id': this.activeCategory.id, 'name': this.activeCategory.name } });
+                            this.router.navigateByUrl('/add-category', { queryParams: { 'id': this.activeCategory.id, 'name': this.activeCategory.name } });
                         }
                     }, {
-                        text: '�༭����',
+                        text: '编辑分类',
                         handler: () => {
                             this.router.navigate(['/editCategory'], { queryParams: { 'id': this.activeCategory.id } });
                         }
                     }, {
-                        text: 'ȡ��',
+                        text: '取消',
                         role: 'cancel',
                         handler: () => {
                         }
@@ -174,8 +173,7 @@ CategoryListPage.ctorParameters = () => [
     { type: src_app_shared_services_category_service__WEBPACK_IMPORTED_MODULE_4__["CategoryService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ActionSheetController"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"] },
-    { type: Location }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"] }
 ];
 CategoryListPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -184,7 +182,7 @@ CategoryListPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./category-list.page.scss */ "./src/app/routes/category-list/category-list.page.scss")).default]
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_category_service__WEBPACK_IMPORTED_MODULE_4__["CategoryService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ActionSheetController"],
-        _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"], Location])
+        _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"]])
 ], CategoryListPage);
 
 

@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\n    <ion-toolbar>\n      <ion-buttons slot=\"start\">\n        <ion-back-button text=\"Back\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>Find PassWord</ion-title>\n    </ion-toolbar>\n    <ion-toolbar>\n      1. Input email or tel> 2. Input Code>3. Reset PassWord\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content padding>\n    <ion-slides  #forgotPasswordSlides>\n      <ion-slide>\n          <form (ngSubmit)=\"onSendPhone()\" #forgotPasswordForm=\"ngForm\" novalidate>\n            <ion-list>\n              <ion-item>\n                <ion-label position=\"fixed\">Email/Tel</ion-label>\n                <ion-input name=\"forgotPhone\" type=\"text\" required [(ngModel)]=\"user.forgotPhone\"></ion-input>\n              </ion-item>\n              <div padding-horizontal>\n                <ion-button type=\"submit\" expand=\"full\" color=\"primary\" [disabled]=\"forgotPasswordForm.invalid\">Git</ion-button>\n              </div>\n            </ion-list>\n          </form>\n      </ion-slide>\n      <ion-slide>\n        <form (ngSubmit)=\"onSendCode()\" #codeForm=\"ngForm\" novalidate>\n          <ion-list>\n            <ion-item>\n              <ion-label position=\"fixed\">Code</ion-label>\n              <ion-input name=\"code\" type=\"text\" required [(ngModel)]=\"user.code\"></ion-input>\n            </ion-item>\n            <ion-text text-left color=\"danger\" *ngIf=\"codeForm.submitted\">\n              <p [hidden]=\"codeIsRight\" padding-start>Your code is not right!</p>\n            </ion-text>\n            <div padding-horizontal>\n              <ion-button type=\"submit\" expand=\"full\" color=\"primary\" [disabled]=\"codeForm.invalid\">Git</ion-button>\n            </div>\n          </ion-list>\n        </form>\n      </ion-slide>\n      <ion-slide>\n        <form (ngSubmit)=\"onSendPwd()\" #pwdForm=\"ngForm\" novalidate>\n          <ion-list>\n            <ion-item>\n              <ion-label position=\"fixed\">User PassWord</ion-label>\n              <ion-input name=\"pwd\" type=\"password\" required [(ngModel)]=\"user.pwd\"></ion-input>\n            </ion-item>\n            <ion-item>\n              <ion-label position=\"fixed\">Confirm PassWord</ion-label>\n              <ion-input name=\"cpwd\" type=\"password\" required [(ngModel)]=\"user.cpwd\"></ion-input>\n            </ion-item>\n            <ion-text text-left color=\"danger\" *ngIf=\"pwdForm.submitted\">\n              <p [hidden]=\"pwdIsSame\" padding-start>PassWord not Same</p>\n            </ion-text>\n            <div padding-horizontal>\n              <ion-button type=\"submit\" expand=\"full\" color=\"primary\" [disabled]=\"pwdForm.invalid\">Git</ion-button>\n            </div>\n          </ion-list>\n        </form>\n      </ion-slide>\n    </ion-slides>\n  </ion-content>\n  ";
+    __webpack_exports__["default"] = "<ion-header>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-back-button text=\"Back\"></ion-back-button>\r\n      </ion-buttons>\r\n      <ion-title>找回密码</ion-title>\r\n    </ion-toolbar>\r\n    <ion-toolbar>\r\n      1. 输入邮箱或手机号> 2. 输入验证码>3. 重置密码\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content padding>\r\n    <ion-slides  #forgotPasswordSlides>\r\n      <ion-slide>\r\n          <form (ngSubmit)=\"onSendPhone()\" #forgotPasswordForm=\"ngForm\" novalidate>\r\n            <ion-list>\r\n              <ion-item>\r\n                <ion-label position=\"fixed\">邮箱/手机号</ion-label>\r\n                <ion-input name=\"forgotPhone\" type=\"text\" required [(ngModel)]=\"user.forgotPhone\"></ion-input>\r\n              </ion-item>\r\n              <div padding-horizontal>\r\n                <ion-button type=\"submit\" expand=\"full\" color=\"primary\" [disabled]=\"forgotPasswordForm.invalid\">提交</ion-button>\r\n              </div>\r\n            </ion-list>\r\n          </form>\r\n      </ion-slide>\r\n      <ion-slide>\r\n        <form (ngSubmit)=\"onSendCode()\" #codeForm=\"ngForm\" novalidate>\r\n          <ion-list>\r\n            <ion-item>\r\n              <ion-label position=\"fixed\">验证码</ion-label>\r\n              <ion-input name=\"code\" type=\"text\" required [(ngModel)]=\"user.code\"></ion-input>\r\n            </ion-item>\r\n            <ion-text text-left color=\"danger\" *ngIf=\"codeForm.submitted\">\r\n              <p [hidden]=\"codeIsRight\" padding-start>您的验证码有误!</p>\r\n            </ion-text>\r\n            <div padding-horizontal>\r\n              <ion-button type=\"submit\" expand=\"full\" color=\"primary\" [disabled]=\"codeForm.invalid\">提交</ion-button>\r\n            </div>\r\n          </ion-list>\r\n        </form>\r\n      </ion-slide>\r\n      <ion-slide>\r\n        <form (ngSubmit)=\"onSendPwd()\" #pwdForm=\"ngForm\" novalidate>\r\n          <ion-list>\r\n            <ion-item>\r\n              <ion-label position=\"fixed\">新密码</ion-label>\r\n              <ion-input name=\"pwd\" type=\"password\" required [(ngModel)]=\"user.pwd\"></ion-input>\r\n            </ion-item>\r\n            <ion-item>\r\n              <ion-label position=\"fixed\">确认密码</ion-label>\r\n              <ion-input name=\"cpwd\" type=\"password\" required [(ngModel)]=\"user.cpwd\"></ion-input>\r\n            </ion-item>\r\n            <ion-text text-left color=\"danger\" *ngIf=\"pwdForm.submitted\">\r\n              <p [hidden]=\"pwdIsSame\" padding-start>两次密码不相同</p>\r\n            </ion-text>\r\n            <div padding-horizontal>\r\n              <ion-button type=\"submit\" expand=\"full\" color=\"primary\" [disabled]=\"pwdForm.invalid\">提交</ion-button>\r\n            </div>\r\n          </ion-list>\r\n        </form>\r\n      </ion-slide>\r\n    </ion-slides>\r\n  </ion-content>\r\n  ";
     /***/
   },
 
@@ -182,7 +182,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ForgotPasswordPage =
     /*#__PURE__*/
     function () {
-      function ForgotPasswordPage(authenticationCodeService, router, userService, toastController, alertController, menuController) {
+      function ForgotPasswordPage(authenticationCodeService, router, userService, toastController, alertController, menuController, alertCtrl) {
         _classCallCheck(this, ForgotPasswordPage);
 
         this.authenticationCodeService = authenticationCodeService;
@@ -191,12 +191,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.toastController = toastController;
         this.alertController = alertController;
         this.menuController = menuController;
+        this.alertCtrl = alertCtrl;
         this.user = {
           forgotPhone: '',
           code: '',
           pwd: '',
           cpwd: ''
         };
+        this.scode = "0";
         this.codeIsRight = true;
         this.pwdIsSame = true;
       }
@@ -235,33 +237,43 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee() {
-            var toast;
+            var alert, toast;
             return regeneratorRuntime.wrap(function _callee$(_context) {
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
                     if (!this.userService.check(this.user.forgotPhone)) {
-                      _context.next = 5;
+                      _context.next = 9;
                       break;
                     }
 
-                    this.authenticationCodeService.createCode(4);
+                    this.scode = this.authenticationCodeService.createCode(4);
+                    _context.next = 4;
+                    return this.alertCtrl.create({
+                      header: '验证码',
+                      message: '您的验证码是' + this.scode,
+                      buttons: ['确认']
+                    });
+
+                  case 4:
+                    alert = _context.sent;
+                    alert.present();
                     this.next();
-                    _context.next = 9;
+                    _context.next = 13;
                     break;
 
-                  case 5:
-                    _context.next = 7;
+                  case 9:
+                    _context.next = 11;
                     return this.toastController.create({
-                      message: 'Tel not register!',
+                      message: '不存在这个手机用户！',
                       duration: 3000
                     });
 
-                  case 7:
+                  case 11:
                     toast = _context.sent;
                     toast.present();
 
-                  case 9:
+                  case 13:
                   case "end":
                     return _context.stop();
                 }
@@ -272,10 +284,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onSendCode",
         value: function onSendCode() {
-          if (this.authenticationCodeService.validate(this.user.code)) {
+          if (this.scode == this.user.code) {
             this.next();
           } else {
-            // ��֤�����
+            // 验证码错误
             this.codeIsRight = false;
           }
         }
@@ -302,9 +314,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                     _context2.next = 4;
                     return this.alertController.create({
-                      header: 'Tips',
-                      message: 'PassWord modify successful!',
-                      buttons: ['Confirm']
+                      header: '提示',
+                      message: '密码修改成功！',
+                      buttons: ['确认']
                     });
 
                   case 4:
@@ -345,6 +357,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["MenuController"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"]
       }];
     };
 
@@ -359,7 +373,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./forgot-password.page.scss */
       "./src/app/routes/forgot-password/forgot-password.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_authentiaction_code_service__WEBPACK_IMPORTED_MODULE_3__["AuthentiactionCodeService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], src_app_shared_services_user_service_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["MenuController"]])], ForgotPasswordPage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_authentiaction_code_service__WEBPACK_IMPORTED_MODULE_3__["AuthentiactionCodeService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], src_app_shared_services_user_service_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["MenuController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"]])], ForgotPasswordPage);
     /***/
   }
 }]);

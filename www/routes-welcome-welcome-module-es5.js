@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar no-border>\n    <ion-buttons slot=\"end\">\n      <ion-button color=\"primary\" [hidden]=\"!showSkip\" (click)=\"onSkip()\">跳过</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-slides #slides pager=\"true\" (ionSlideWillChange)=\"onSlideWillChange($event)\">\n    <ion-slide>\n      <img src=\"/assets/img/splash_one.png\" alt=\"\">\n    </ion-slide>\n    <ion-slide>\n      <img src=\"./assets/img/splash_two.png\" alt=\"\">\n    </ion-slide>\n    <ion-slide>\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            <img src=\"assets/img/splash_three.png\">\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-button color=\"primary\" fill=\"outline\" expand=\"block\" href=\"login\">登录</ion-button>\n          </ion-col>\n          <ion-col>\n            <ion-button color=\"primary\" fill=\"outline\" expand=\"block\" href=\"signup\">注册</ion-button>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-slide>\n  </ion-slides>\n  <app-copyright [bottom]=\"'30px'\"></app-copyright>\n</ion-content>\n";
+    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar no-border>\n    <ion-buttons slot=\"end\">\n      <ion-button color=\"primary\" [hidden]=\"!showSkip\" (click)=\"onSkip()\">跳过</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-slides #slides pager=\"true\" (ionSlideWillChange)=\"onSlideWillChange($event)\">\n    <ion-slide>\n      <img src=\"/assets/img/splash_one.png\" alt=\"\">\n    </ion-slide>\n    <ion-slide>\n      <img src=\"./assets/img/splash_two.png\" alt=\"\">\n    </ion-slide>\n    <ion-slide>\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            <img src=\"assets/img/splash_three.png\">\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-button color=\"primary\" fill=\"outline\" expand=\"block\" href=\"login\">登录</ion-button>\n          </ion-col>\n          <ion-col>\n            <ion-button color=\"primary\" fill=\"outline\" expand=\"block\" href=\"signup\">注册</ion-button>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-slide>\n  </ion-slides>\n  <app-copyright [bottom]=\"'25px'\"></app-copyright>\n</ion-content>\n";
     /***/
   },
 
@@ -219,10 +219,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ionViewWillEnter",
         value: function ionViewWillEnter() {
-          //��һ�ε���get����ʱ��'App'���key�����ڣ��ڶ�����������ΪĬ��ֵ���� 
           var appConfig = this.localStorageService.get('App', {
             hasRun: false,
-            version: '1.0.1'
+            version: '1.1.1'
           });
 
           if (appConfig.hasRun == false) {

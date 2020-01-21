@@ -47,7 +47,7 @@ export class UserService {
 
         // 登录错误提示
         if ( isUser === 'null') {
-            console.log('No user yet!');
+            console.log('该用户不存在！');
         }
         let noUser = true;
         for(let u of isUser){
@@ -66,10 +66,10 @@ export class UserService {
                 } else {
                     console.log('Error password');
                     const alert = await this.alertController.create({
-                        header: 'Tips',
+                        header: '提示',
                         // subHeader: 'sfd',
-                        message: 'Password is error!',
-                        buttons: ['Confirm']
+                        message: '密码错误！',
+                        buttons: ['确认']
                     });
                     alert.present();
                 }
@@ -78,12 +78,12 @@ export class UserService {
             }
         }
         if( noUser ){
-            console.log('No this user!');
+            console.log('不存在该用户！');
             const alert = await this.alertController.create({
-                header: 'Tips',
+                header: '提示',
                 // subHeader: 'sfd',
-                message: 'No this user!',
-                buttons: ['Confirm']
+                message: '不存在该用户',
+                buttons: ['确认']
             });
             alert.present();
         }

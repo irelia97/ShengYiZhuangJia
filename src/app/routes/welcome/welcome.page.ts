@@ -29,10 +29,9 @@ export class WelcomePage implements OnInit {
   }
 
   ionViewWillEnter() {
-    //第一次调用get方法时，'App'这个key不存在，第二个参数会作为默认值返回 
     let appConfig: any = this.localStorageService.get('App', {
       hasRun: false,
-      version: '1.0.1'
+      version: '1.1.1'
     });
     if ( appConfig.hasRun == false ) {
       appConfig.hasRun = true;

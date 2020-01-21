@@ -39,19 +39,19 @@ export class AppComponent {
       this.splashScreen.hide();
     });
     this.appPages = [
-        { title: 'Forum', url: '/home', icon: 'chatboxes' },
-        { title: 'Tel Box', url: '/home', icon: 'create' },
-        { title: 'Invite', url: '/home', icon: 'git-merge' },
-        { title: 'Cash account', url: '/home', icon: 'cash' },
-        { title: 'FeedBack', url: '/home', icon: 'cash' },
-        { title: 'Help', url: '/home', icon: 'cash' },
+        { title: '资金账户', url: '/home', icon: 'chatboxes' },
+        { title: '手机橱窗', url: '/home', icon: 'create' },
+        { title: '邀请有礼', url: '/home', icon: 'git-merge' },
+        { title: '开店论坛', url: '/home', icon: 'cash' },
+        { title: '反馈建议', url: '/home', icon: 'cash' },
+        { title: '帮助中心', url: '/home', icon: 'cash' },
       ];
     }
     nullUser = {
-        shopName: 'Null',
-        phone: 'NULL',
-        email: 'null',
-        accounts: {phone: 'nUll', passwordToken: 'nUlL'},
+        shopName: '未登录店铺名',
+        phone: '未登录手机',
+        email: '未登录邮箱',
+        accounts: {phone: '未定义', passwordToken: '未定义'},
         registerDate: new Date().toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, ''),
         shortName: '',
         owner: '',

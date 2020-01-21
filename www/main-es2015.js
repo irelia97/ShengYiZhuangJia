@@ -501,7 +501,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-split-pane>\n    <ion-menu type=\"overlay\">\n      <ion-header>\n        <ion-toolbar>\n          <ion-title>Menu</ion-title>\n        </ion-toolbar>\n      </ion-header>\n      <ion-content>\n        <ion-list>\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages\">\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"[p.url]\">\n              <ion-icon slot=\"start\" [name]=\"p.icon\"></ion-icon>\n              <ion-label>\n                {{p.title}}\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle auto-hide=\"false\">\n            <ion-button color=\"light\" fill=\"clear\" href=\"/setting\" color=\"red\">\n              <ion-icon slot=\"start\" name='settings'></ion-icon>Settings\n            </ion-button>\n          </ion-menu-toggle>\n        </ion-list>\n\n        <ion-list>\n            <ion-item color=\"medium\">\n              <ion-label>\n                <ion-text>\n                  <h2>{{userInfo.name}}</h2>\n                </ion-text>\n                <p>{{userInfo.tel}}</p>\n                <p>{{userInfo.email}}</p>\n                <p style=\"font-size:16px;color: red;\">Chinese all Garbled only use English</p>\n              </ion-label>\n              <ion-badge slot=\"end\" color=\"primary\">VIP Version</ion-badge>\n            </ion-item>\n          </ion-list>\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane>\r\n    <ion-menu type=\"overlay\">\r\n      <ion-header>\r\n        <ion-toolbar>\r\n          <ion-title>MENU</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages\">\r\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"[p.url]\">\r\n              <ion-icon slot=\"start\" [name]=\"p.icon\"></ion-icon>\r\n              <ion-label>\r\n                {{p.title}}\r\n              </ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-button color=\"light\" fill=\"clear\" href=\"/setting\" color=\"red\">\r\n              <ion-icon slot=\"start\" name='settings'></ion-icon>设置\r\n            </ion-button>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n\r\n        <ion-list>\r\n            <ion-item color=\"medium\">\r\n              <ion-label>\r\n                <ion-text>\r\n                  <h2>{{userInfo.name}}</h2>\r\n                </ion-text>\r\n                <p>{{userInfo.tel}}</p>\r\n                <p>{{userInfo.email}}</p>\r\n              </ion-label>\r\n              <ion-badge slot=\"end\" color=\"primary\">VIP</ion-badge>\r\n            </ion-item>\r\n          </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -861,10 +861,10 @@ let AppComponent = class AppComponent {
             }
         ];
         this.nullUser = {
-            shopName: 'Null',
-            phone: 'NULL',
-            email: 'null',
-            accounts: { phone: 'nUll', passwordToken: 'nUlL' },
+            shopName: '未登录店铺名',
+            phone: '未登录手机',
+            email: '未登录邮箱',
+            accounts: { phone: '未定义', passwordToken: '未定义' },
             registerDate: new Date().toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, ''),
             shortName: '',
             owner: '',
@@ -885,12 +885,12 @@ let AppComponent = class AppComponent {
             this.splashScreen.hide();
         });
         this.appPages = [
-            { title: 'Forum', url: '/home', icon: 'chatboxes' },
-            { title: 'Tel Box', url: '/home', icon: 'create' },
-            { title: 'Invite', url: '/home', icon: 'git-merge' },
-            { title: 'Cash account', url: '/home', icon: 'cash' },
-            { title: 'FeedBack', url: '/home', icon: 'cash' },
-            { title: 'Help', url: '/home', icon: 'cash' },
+            { title: '资金账户', url: '/home', icon: 'chatboxes' },
+            { title: '手机橱窗', url: '/home', icon: 'create' },
+            { title: '邀请有礼', url: '/home', icon: 'git-merge' },
+            { title: '开店论坛', url: '/home', icon: 'cash' },
+            { title: '反馈建议', url: '/home', icon: 'cash' },
+            { title: '帮助中心', url: '/home', icon: 'cash' },
         ];
     }
 };
@@ -1005,7 +1005,7 @@ __webpack_require__.r(__webpack_exports__);
 let CopyrightComponent = class CopyrightComponent {
     constructor() {
         let year = (new Date()).getFullYear();
-        this.text = `2010-${year} LYY-ShengYiZhuanJia`;
+        this.text = `2015-${year} 刘永阳-生意专家`;
         this.bottom = '10px';
     }
 };

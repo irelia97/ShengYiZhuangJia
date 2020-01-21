@@ -57,9 +57,9 @@ export class SignupPage implements OnInit {
   async onSendSMS() {
     this.randomCode = this.authenticationCodeService.createCode(4);
     let alert = await this.alertCtrl.create({
-        header : 'Code',
-        message: 'Your code is ' + this.randomCode,
-        buttons: ['OK']
+        header : '验证码',
+        message: '您的验证码是' + this.randomCode,
+        buttons: ['确认']
     });
     alert.present();
 
@@ -92,17 +92,17 @@ export class SignupPage implements OnInit {
       if (inputCode == this.randomCode) {
         console.log('验证通过');
         let alert = await this.alertCtrl.create({
-            header : 'Code',
-            message: 'Your code is Right!',
-            buttons: ['OK']
+            header : '验证码通过',
+            message: '您的验证码正确！',
+            buttons: ['确认']
           });
           alert.present();
       } else {
         console.log('验证码不正确');
         let alert = await this.alertCtrl.create({
-            header : 'Code',
-            message: 'Your code is Wrong!',
-            buttons: ['OK']
+            header : '验证码错误',
+            message: '您的验证码错误！',
+            buttons: ['确认']
         });
         alert.present();
       }

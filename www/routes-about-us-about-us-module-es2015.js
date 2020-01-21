@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar>\r\n      <ion-title>关于我们</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content padding>\r\n    <img src=\"assets/img/about.jpg\" alt=\"\">\r\n    <ion-text>\r\n      <p>姓名：刘永阳</p>\r\n      <p>学号：190327063</p>\r\n      <p>已完成部分功能：欢迎页/首页/版权/登录/注册/忘记密码/找回密码/</p>\r\n      <p>存在的问题：路由守护无效且无法跳转页面/VsCode编辑的中文在web上显示为乱码</p>\r\n\r\n      <p>意见：下学期再来讲段子</p>\r\n      <p>建议：下学期要不做安卓吧(做这个太难受了o(╯□╰)o)</p>\r\n    </ion-text>\r\n  </ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar>\r\n      <ion-title>关于我们</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content padding>\r\n    <img src=\"assets/img/about.jpg\" alt=\"\">\r\n    <ion-text>\r\n      <p>姓名：刘永阳</p>\r\n      <p>学号：190327063</p>\r\n      <p>已完成部分功能：欢迎页/首页/版权/登录/注册/忘记密码/找回密码/</p>\r\n      <p>存在的问题：路由守护无效且无法跳转页面/VsCode编辑的中文在web上显示为乱码</p>\r\n\r\n      <p>意见：我真是晕死了被判抄袭。。。虽然没做完，但都是我自己一点一点做的。。。早知道不借了</p>\r\n      <p>建议：唉</p>\r\n    </ion-text>\r\n  </ion-content>");
 
 /***/ }),
 

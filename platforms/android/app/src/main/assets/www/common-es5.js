@@ -1341,7 +1341,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     console.log(password); // 登录错误提示
 
                     if (isUser === 'null') {
-                      console.log('No user yet!');
+                      console.log('该用户不存在！');
                     }
 
                     noUser = true;
@@ -1385,10 +1385,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     console.log('Error password');
                     _context12.next = 30;
                     return this.alertController.create({
-                      header: 'Tips',
+                      header: '提示',
                       // subHeader: 'sfd',
-                      message: 'Password is error!',
-                      buttons: ['Confirm']
+                      message: '密码错误！',
+                      buttons: ['确认']
                     });
 
                   case 30:
@@ -1448,13 +1448,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       break;
                     }
 
-                    console.log('No this user!');
+                    console.log('不存在该用户！');
                     _context12.next = 56;
                     return this.alertController.create({
-                      header: 'Tips',
+                      header: '提示',
                       // subHeader: 'sfd',
-                      message: 'No this user!',
-                      buttons: ['Confirm']
+                      message: '不存在该用户',
+                      buttons: ['确认']
                     });
 
                   case 56:

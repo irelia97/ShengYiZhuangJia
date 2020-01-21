@@ -10,7 +10,7 @@ export class CopyrightComponent {
     text: string;
     constructor() {
         let year = (new Date()).getFullYear();
-        this.text = `2010-${year} LYY-ShengYiZhuanJia`;
+        this.text = `2015-${year} 刘永阳-生意专家`;
         this.bottom = '10px';
     }
 }

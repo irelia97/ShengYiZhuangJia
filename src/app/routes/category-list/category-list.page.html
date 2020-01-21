@@ -1,13 +1,13 @@
 <ion-header>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
-        <ion-button color="light" (click)="back()">
+        <ion-button color="light" href="\home">
           <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
         </ion-button>
       </ion-buttons>
-      <ion-title>ÉÌÆ··ÖÀà</ion-title>
+      <ion-title>å•†å“åˆ†ç±»</ion-title>
       <ion-buttons slot="end">
-        <ion-button color="light" routerLink="/addCategory" [queryParams]="{'id': 0, 'name': ''}">
+        <ion-button color="light" href="\add-category">
           <ion-icon slot="icon-only" name="add"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -19,7 +19,7 @@
       <ion-row no-padding align-items-stretch>
         <ion-col size="5" no-padding left>
           <ion-list lines="full" color="light">
-            <ion-item color="light">´ó·ÖÀà</ion-item>
+            <ion-item color="light">å¤§åˆ†ç±»</ion-item>
             <ion-item *ngFor="let c of categories" [color]="getItemColor(c.id)" (click)="onSelectCategory(c.id)" [ngClass]="{'item-active': c.id===activeCategory.id}">
               {{c.name}}
             </ion-item>
@@ -27,20 +27,20 @@
         </ion-col>
         <ion-col size="7" no-padding>
           <ion-list lines="none">
-            <ion-item lines="full">Ð¡·ÖÀà</ion-item>
-            <ion-item detail lines="full" (click)="onSelectSubCategory(activeCategory)">ÎÞÐ¡·ÖÀà½øÈë´ó·ÖÀà</ion-item>
-            <ion-item detail *ngFor="let ac of activeCategory.children" lines="full" (click)="onSelectSubCategory(ac)">
+            <ion-item lines="full">å°åˆ†ç±»</ion-item>
+            <ion-item detail lines="full">æ— å°åˆ†ç±»è¿›å…¥å¤§åˆ†ç±»</ion-item>
+            <ion-item detail *ngFor="let ac of activeCategory.children" lines="full">
               {{ac.name}}
             </ion-item>
             <ion-item detail="false" routerLink="/addCategory" [queryParams]="{'id': activeCategory.id, 'name': activeCategory.name}">
               <ion-icon slot="start" name='add-circle' color="primary"></ion-icon>
-              <ion-label color="primary">ÐÂÔöÐ¡·ÖÀà</ion-label>
+              <ion-label color="primary">æ–°å¢žå°åˆ†ç±»</ion-label>
             </ion-item>
           </ion-list>
           <ion-list class="list-footer" lines="none" no-margin >
             <ion-item lines="full">
-              <ion-text *ngIf="activeCategory.children.length===0"><h6>Ä¿Ç°Ã»ÓÐÐ¡·ÖÀà</h6></ion-text>
-              <ion-text *ngIf="activeCategory.children.length!==0">¹²{{activeCategory.children.length}}ÖÖÉÌÆ··ÖÀà</ion-text>
+              <ion-text *ngIf="activeCategory.children.length===0"><h6>ç›®å‰æ²¡æœ‰å°åˆ†ç±»</h6></ion-text>
+              <ion-text *ngIf="activeCategory.children.length!==0">å…±{{activeCategory.children.length}}ç§å•†å“åˆ†ç±»</ion-text>
               <ion-button color="light" slot="end" (click)="onPresentActionSheet()">
                 <ion-icon slot="icon-only" name="more"></ion-icon>
               </ion-button>

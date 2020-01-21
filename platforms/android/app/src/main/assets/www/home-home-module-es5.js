@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n        <ion-menu-button color=\"light\"></ion-menu-button>\n      </ion-buttons>\n      <ion-title>\n        HomePage\n      </ion-title>\n      <ion-buttons slot=\"end\">\n        <ion-button color=\"light\">\n          <ion-icon slot=\"icon-only\" name=\"calendar\"></ion-icon>\n        </ion-button>\n        <ion-button color=\"light\">\n          <ion-icon slot=\"icon-only\" name=\"notifications\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n    <img src=\"assets/img/Irelia.jpg\" alt=\"\">\n    <ion-grid>\n        <ion-row>\n            <ion-col *ngFor=\"let s of sales\">\n              <h6>{{s.title}}</h6>\n              <h4><span>{{233.95 | number:'1.2-2'}}RMB</span></h4>\n              <p>\n                {{s.content}}\n                <span [ngClass]=\"{'less-equal':s.current - s.previous <= 0,'greater':s.current - s.previous > 0}\">\n                  {{s.current - s.previous}}\n                </span>&nbsp;\n                <ng-container [ngSwitch]=\"minus(s.current, s.previous)\">\n                  <ion-icon name=\"arrow-round-up\" color=\"danger\" *ngSwitchCase=\"1\"></ion-icon>\n                  <ion-icon name=\"arrow-round-forward\" color=\"success\" *ngSwitchCase=\"0\"></ion-icon>\n                  <ion-icon name=\"arrow-round-down\" color=\"success\" *ngSwitchCase=\"-1\"></ion-icon>\n                </ng-container>\n              </p>\n            </ion-col>\n        </ion-row>\n\n        <ion-row class=\"quick-actions\"  *ngFor=\"let q of quicks\">\n            <ion-col class=\"quick-action-item\" *ngFor=\"let qq of q\">\n              <a class=\"shortcut\" href={{qq.href}} *ngIf=\"!qq.disable\">\n                <img src=\"assets/img/{{qq.name}}.png\" alt=\"\">\n                <!--<ion-icon name={{qq.name}}></ion-icon>-->\n                <div>{{qq.text}}</div>\n              </a>\n            </ion-col>\n        </ion-row>    \n          \n        <ion-row class=\"quick-actions\">\n            <ion-col class=\"quick-action-item\">\n                <a class=\"shortcut\" href=\"/add-category\">\n                    <img src=\"/assets/img/image_addsales.png\" alt=\"\">\n                    <div>AddSales</div>\n                </a>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n    <app-copyright [bottom]=\"'30px'\"></app-copyright>\n  </ion-content>\n  ";
+    __webpack_exports__["default"] = "<ion-header>\r\n    <ion-toolbar color=\"primary\">\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button color=\"light\"></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>\r\n        主页\r\n      </ion-title>\r\n      <ion-buttons slot=\"end\">\r\n        <ion-button color=\"light\">\r\n          <ion-icon slot=\"icon-only\" name=\"calendar\"></ion-icon>\r\n        </ion-button>\r\n        <ion-button color=\"light\">\r\n          <ion-icon slot=\"icon-only\" name=\"notifications\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content>\r\n    <img src=\"assets/img/androidbanner.png\" alt=\"\">\r\n    <ion-grid>\r\n        <ion-row>\r\n            <ion-col *ngFor=\"let s of sales\">\r\n              <h6>{{s.title}}</h6>\r\n              <h4><span>{{233.33 | number:'1.2-2'}}RMB</span></h4>\r\n              <p>\r\n                {{s.content}}\r\n                <span [ngClass]=\"{'less-equal':s.current - s.previous <= 0,'greater':s.current - s.previous > 0}\">\r\n                  {{s.current - s.previous}}\r\n                </span>&nbsp;\r\n                <ng-container [ngSwitch]=\"minus(s.current, s.previous)\">\r\n                  <ion-icon name=\"arrow-round-up\" color=\"danger\" *ngSwitchCase=\"1\"></ion-icon>\r\n                  <ion-icon name=\"arrow-round-forward\" color=\"success\" *ngSwitchCase=\"0\"></ion-icon>\r\n                  <ion-icon name=\"arrow-round-down\" color=\"success\" *ngSwitchCase=\"-1\"></ion-icon>\r\n                </ng-container>\r\n              </p>\r\n            </ion-col>\r\n        </ion-row>\r\n\r\n        <ion-row class=\"quick-actions\"  *ngFor=\"let q of quicks\">\r\n            <ion-col class=\"quick-action-item\" *ngFor=\"let qq of q\">\r\n              <a class=\"shortcut\" href={{qq.href}} *ngIf=\"!qq.disable\">\r\n                <img src=\"assets/img/{{qq.name}}.png\" alt=\"\">\r\n                <!--<ion-icon name={{qq.name}}></ion-icon>-->\r\n                <div>{{qq.text}}</div>\r\n              </a>\r\n            </ion-col>\r\n        </ion-row>    \r\n          \r\n        <ion-row class=\"quick-actions\">\r\n            <ion-col class=\"quick-action-item\">\r\n                <a class=\"shortcut\" href=\"/category-list\">\r\n                    <img src=\"/assets/img/image_addsales.png\" alt=\"\">\r\n                    <div>添加商品</div>\r\n                </a>\r\n            </ion-col>\r\n        </ion-row>\r\n    </ion-grid>\r\n    <app-copyright [bottom]=\"'25px'\"></app-copyright>\r\n  </ion-content>\r\n  \r\n\r\n\r\n  <!--真没抄袭-->\r\n    <!--真没抄袭-->\r\n      <!--真没抄袭-->\r\n        <!--真没抄袭-->\r\n          <!--真没抄袭-->\r\n            <!--真没抄袭-->\r\n              <!--真没抄袭-->\r\n                <!--真没抄袭-->\r\n                  <!--真没抄袭-->\r\n                    <!--真没抄袭-->\r\n                      <!--真没抄袭-->\r\n                        <!--真没抄袭-->\r\n                          <!--真没抄袭-->\r\n                            <!--真没抄袭-->\r\n                              <!--真没抄袭-->";
     /***/
   },
 
@@ -103,7 +103,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         component: _home_page__WEBPACK_IMPORTED_MODULE_6__["HomePage"]
       }])],
       declarations: [_home_page__WEBPACK_IMPORTED_MODULE_6__["HomePage"]]
-    })], HomePageModule);
+    })], HomePageModule); //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+    //  ��û��Ϯ
+
     /***/
   },
 
@@ -180,75 +191,75 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.router = router;
         this.localStorageService = localStorageService;
         this.sales = [{
-          'title': 'Today',
-          'content': 'With Yesterday',
-          'current': 10.00,
-          'previous': 20.00
+          'title': '今日',
+          'content': '比昨日',
+          'current': 10.30,
+          'previous': 12.03
         }, {
-          'title': 'Week',
-          'content': 'With SameTime',
-          'current': 20.00,
-          'previous': 30.00
-        }, {
-          'title': 'Month',
-          'content': 'With SameTime',
+          'title': '七日',
+          'content': '比同期',
           'current': 30.00,
-          'previous': 40.00
+          'previous': 24.54
+        }, {
+          'title': '本月',
+          'content': '比同期',
+          'current': -5.46,
+          'previous': -1.25
         }];
         this.quicks = [[{
           'href': '/addProduct',
           'name': 'add_salse',
-          'text': 'Add Items',
+          'text': '新增商品',
           'disable': false
         }, {
           'href': '/home',
           'name': 'add_user',
-          'text': 'Add members',
+          'text': '新增会员',
           'disable': false
         }, {
           'href': '/home',
           'name': 'sales_account',
-          'text': 'Cash register',
+          'text': '收银记账',
           'disable': false
         }, {
           'href': '/home',
           'name': 'a_note',
-          'text': 'Expenditure management',
+          'text': '支出管理',
           'disable': false
         }], [{
           'href': '/productList',
           'name': 'sales_management',
-          'text': 'Merchandise management',
+          'text': '商品管理',
           'disable': false
         }, {
           'href': '/home',
           'name': 'user_management',
-          'text': 'Member Management',
+          'text': '会员管理',
           'disable': false
         }, {
           'href': '/home',
           'name': 'shop_management',
-          'text': 'Query sales',
+          'text': '查询销售',
           'disable': false
         }, {
           'href': '/home',
           'name': 'analysis',
-          'text': 'Insight',
+          'text': '智能分析',
           'disable': false
         }], [{
           'href': '/supplierList',
           'name': 'gongying_more',
-          'text': 'Supplier management',
+          'text': '供应商管理',
           'disable': false
         }, {
           'href': '/home',
           'name': 'guandan_more',
-          'text': 'Pending order',
+          'text': '挂单',
           'disable': false
         }, {
           'href': '/home',
           'name': 'image_addsales',
-          'text': 'Advanced Features',
+          'text': '高级功能',
           'disable': false
         }, {
           'disable': true
@@ -304,7 +315,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./home.page.scss */
       "./src/app/home/home.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _shared_services_local_storage_service__WEBPACK_IMPORTED_MODULE_3__["LocalStorageService"]])], HomePage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _shared_services_local_storage_service__WEBPACK_IMPORTED_MODULE_3__["LocalStorageService"]])], HomePage); //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+    //  真没抄袭
+
     /***/
   }
 }]);

@@ -1,36 +1,36 @@
 <ion-header>
     <ion-toolbar>
-      <ion-title>Settings</ion-title>
+      <ion-title>设置</ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content color="medium">
     <ion-list inset="true">
       <ion-item detail href="/shopsetting">
-        <ion-label>Shop Settings</ion-label>
+        <ion-label>店铺设置</ion-label>
       </ion-item>
     <ion-item detail href="/change-password">
-      <ion-label>Change Password</ion-label>
+      <ion-label>修改密码</ion-label>
     </ion-item>
     </ion-list>
     <ion-list inset="true">
       <ion-item detail href="/about-us">
-        <ion-label>About us</ion-label>
+        <ion-label>关于</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>Contact Customer Service</ion-label>
+        <ion-label>联系客服</ion-label>
         <ion-note slot="end"><a href="Tel:13067373231">13067373231</a></ion-note>
       </ion-item>
       <ion-item detail (click)="checkUpdate()">
-        <ion-label>Versions: {{version}}</ion-label>
-        <ion-note slot="end">Check for updates</ion-note>
+        <ion-label>版本号: {{version}}</ion-label>
+        <ion-note slot="end">检测更新</ion-note>
       </ion-item>
     </ion-list>
     <ion-list inset="true">
       <ion-item detail (click)="onLogout()">
-        <ion-label>Sign out safely</ion-label>
+        <ion-label>安全退出</ion-label>
       </ion-item>
     </ion-list>
-    <!-- ����ʡ�� -->
+    <!-- ÆäËûÊ¡ÂÔ -->
   </ion-content>
   

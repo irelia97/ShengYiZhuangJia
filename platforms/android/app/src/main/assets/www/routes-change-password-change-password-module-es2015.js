@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar>\r\n      <ion-title>修改密码</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content padding>\r\n    <form (ngSubmit)=\"onChangePwd()\" #changePwdForm=\"ngForm\" novalidate>\r\n      <ion-list>\r\n        <ion-item>\r\n          <ion-text>请输入旧密码</ion-text>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-input name=\"oldPwd\" type=\"password\" required [(ngModel)]=\"pwd.old\" #oldPwd=\"ngModel\">\r\n          </ion-input>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-text>请输入新密码</ion-text>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-input name=\"newPwd\" type=\"password\" required [(ngModel)]=\"pwd.new\" #newPwd=\"ngModel\">\r\n          </ion-input>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-text>请再输入一次</ion-text>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-input name=\"cNewPwd\" type=\"password\" required [(ngModel)]=\"pwd.cNew\" #cNewPwd=\"ngModel\">\r\n          </ion-input>\r\n        </ion-item>\r\n        <ion-text text-left color=\"danger\" *ngIf=\"changePwdForm.submitted\">\r\n          <p [hidden]=\"samePwd\" padding-start>两次输入的密码不一致。</p>\r\n          <p [hidden]=\"oldIsRight\" padding-start>您输入的旧密码不正确。</p>\r\n        </ion-text>\r\n        <div padding-horizontal>\r\n          <ion-button type=\"submit\" expand=\"full\" color=\"primary\" [disabled]=\"changePwdForm.invalid\">下一步</ion-button>\r\n        </div>\r\n      </ion-list>\r\n    </form>\r\n  </ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar>\r\n      <ion-title>修改密码</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content padding>\r\n    <form (ngSubmit)=\"onChangePwd()\" #changePwdForm=\"ngForm\" novalidate>\r\n      <ion-list>\r\n        <ion-item>\r\n          <ion-text>请输入旧密码</ion-text>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-input name=\"oldPwd\" type=\"password\" required [(ngModel)]=\"pwd.old\" #oldPwd=\"ngModel\">\r\n          </ion-input>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-text>请输入新密码</ion-text>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-input name=\"newPwd\" type=\"password\" required [(ngModel)]=\"pwd.new\" #newPwd=\"ngModel\">\r\n          </ion-input>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-text>请再输入一次</ion-text>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-input name=\"cNewPwd\" type=\"password\" required [(ngModel)]=\"pwd.cNew\" #cNewPwd=\"ngModel\">\r\n          </ion-input>\r\n        </ion-item>\r\n        <ion-text text-left color=\"danger\" *ngIf=\"changePwdForm.submitted\">\r\n          <p [hidden]=\"samePwd\" padding-start>两次输入的密码不一致。</p>\r\n          <p [hidden]=\"oldIsRight\" padding-start>您输入的旧密码不正确。</p>\r\n        </ion-text>\r\n        <div padding-horizontal>\r\n          <ion-button type=\"submit\" expand=\"full\" color=\"primary\" [disabled]=\"changePwdForm.invalid\">下一步</ion-button>\r\n        </div>\r\n      </ion-list>\r\n    </form>\r\n  </ion-content>\r\n\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->\r\n  <!--没有抄袭-->");
 
 /***/ }),
 
@@ -122,9 +122,9 @@ let ChangePasswordPage = class ChangePasswordPage {
                     this.localStorageService.set('currentUser', login);
                     this.router.navigateByUrl('setting');
                     let alert = yield this.alertController.create({
-                        header: 'Tips',
-                        message: 'Password change successful',
-                        buttons: ['Confirm']
+                        header: '提示',
+                        message: '密码修改成功',
+                        buttons: ['确认']
                     });
                     alert.present();
                 }
@@ -154,6 +154,14 @@ ChangePasswordPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"]])
 ], ChangePasswordPage);
 
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
 
 
 /***/ })

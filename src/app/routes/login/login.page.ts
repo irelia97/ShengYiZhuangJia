@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  username: string = ''; // ÊÓÍ¼Ä£ĞÍµÄÊôĞÔÕËºÅ£¬Ë«Ïò°ó¶¨
-  password: string = ''; // ÊÓÍ¼Ä£ĞÍµÄÊôĞÔÃÜÂë£¬Ë«Ïò°ó¶¨
+  username: string = ''; // è§†å›¾æ¨¡å‹çš„å±æ€§è´¦å·ï¼ŒåŒå‘ç»‘å®š
+  password: string = ''; // è§†å›¾æ¨¡å‹çš„å±æ€§å¯†ç ï¼ŒåŒå‘ç»‘å®š
 
   constructor(private toastController: ToastController, private userService: UserService, 
     private alertController: AlertController, private router: Router) { 
@@ -27,18 +27,18 @@ export class LoginPage {
 
     if (this.username === '') {
         const toast = await this.toastController.create({
-            message: 'Please input your Tel or Email',
+            message: 'è¯·è¾“å…¥æ‚¨çš„æ‰‹æœºå·æˆ–é‚®ç®±',
             duration: 3000
         });
         toast.present();
     }else if (this.password === '') {
         const toast = await this.toastController.create({
-            message: 'Please input password',
+            message: 'è¯·è¾“å…¥å¯†ç ',
             duration: 3000
         });
         toast.present();
     }
-    //  µ÷ÓÃÕæÕıµÄµÇÂ¼·½·¨
+    //  è°ƒç”¨çœŸæ­£çš„ç™»å½•æ–¹æ³•
     this.userService.login(this.username, this.password);
   }
 

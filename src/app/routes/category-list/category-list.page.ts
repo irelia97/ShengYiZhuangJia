@@ -14,7 +14,7 @@ export class CategoryListPage implements OnInit {
     activeCategory: Category;
     categories: Array<Category>;
     constructor(private categoryService: CategoryService, private actionSheetController: ActionSheetController,
-                private router: Router, private events: Events, private location: Location) {
+                private router: Router, private events: Events) {
         categoryService.getAll().then((data) => {
             this.categories = data.result;
             if (this.categories) {
@@ -35,22 +35,23 @@ export class CategoryListPage implements OnInit {
     }
     async onPresentActionSheet() {
         const actionSheet = await this.actionSheetController.create({
-            header: 'Ñ¡ÔñÄúµÄ²Ù×÷',
+            header: 'é€‰æ‹©æ‚¨çš„æ“ä½œ',
             buttons: [
                 {
-                    text: 'ÐÂÔöÐ¡·ÖÀà',
+                    text: 'æ–°å¢žå°åˆ†ç±»',
                     role: 'destructive',
                     handler: () => {
-                        this.router.navigate(['/addCategory'],
+                        this.router.navigateByUrl('/add-category',
                             {queryParams: {'id': this.activeCategory.id, 'name': this.activeCategory.name}});
                     }
                 }, {
-                    text: '±à¼­·ÖÀà',
+                    text: 'ç¼–è¾‘åˆ†ç±»',
                     handler: () => {
-                        this.router.navigate(['/editCategory'], {queryParams: {'id': this.activeCategory.id}});
+                        this.router.navigate(['/editCategory'], 
+                            {queryParams: {'id': this.activeCategory.id}});
                     }
                 }, {
-                    text: 'È¡Ïû',
+                    text: 'å–æ¶ˆ',
                     role: 'cancel',
                     handler: () => {
                     }

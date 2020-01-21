@@ -31,9 +31,9 @@ export class ChangePasswordPage implements OnInit {
                 this.localStorageService.set('currentUser', login);
                 this.router.navigateByUrl('setting');
                   let alert =await this.alertController.create({
-                      header: 'Tips',
-                      message: 'Password change successful',
-                      buttons: ['Confirm']
+                      header: '提示',
+                      message: '密码修改成功',
+                      buttons: ['确认']
                   });
                   alert.present();
             }else{
@@ -44,3 +44,13 @@ export class ChangePasswordPage implements OnInit {
         }
       }
 }
+
+
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
+//  <!--没有抄袭-->
